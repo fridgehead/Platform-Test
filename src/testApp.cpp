@@ -5,6 +5,9 @@ void testApp::setup(){
 	
 	sprite = new GameSprite(&spriteManager);
 	sprite->pos = ofPoint(20,20);
+	sprite->loadData("ass");
+	
+	sprite->setAnimation(ANIM_WALK);
 	
 }
 
@@ -41,6 +44,8 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
+
+	sprite->setAnimation(ANIM_JUMP);
 
 }
 

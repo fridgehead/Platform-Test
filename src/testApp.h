@@ -25,7 +25,7 @@ class testApp : public ofBaseApp{
 	SpriteManager spriteManager;
 	ofImage test;
 	
-
+	AnimationName t;
 };
 
 #endif

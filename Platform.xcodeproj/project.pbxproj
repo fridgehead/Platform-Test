@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		34BD74D213B2285900596DCB /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34BD74D113B2285800596DCB /* Sprite.cpp */; };
 		34BD754713B22B2000596DCB /* SpriteManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34BD754613B22B2000596DCB /* SpriteManager.cpp */; };
+		34BD759413B2836600596DCB /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34BD758D13B2836600596DCB /* tinyxml.cpp */; };
+		34BD759513B2836600596DCB /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34BD758F13B2836600596DCB /* tinyxmlerror.cpp */; };
+		34BD759613B2836600596DCB /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34BD759013B2836600596DCB /* tinyxmlparser.cpp */; };
+		34BD759713B2836600596DCB /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34BD759213B2836600596DCB /* ofxXmlSettings.cpp */; };
 		E45BE0AA0E8CC67C009D7055 /* GLee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE0A90E8CC67C009D7055 /* GLee.a */; };
 		E45BE2E40E8CC69C009D7055 /* rtAudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE2E30E8CC69C009D7055 /* rtAudio.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -84,6 +88,13 @@
 		34BD74D113B2285800596DCB /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
 		34BD754513B22B2000596DCB /* SpriteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteManager.h; sourceTree = "<group>"; };
 		34BD754613B22B2000596DCB /* SpriteManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteManager.cpp; sourceTree = "<group>"; };
+		34BD758B13B2836600596DCB /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = install.xml; path = ../../addons/ofxXmlSettings/install.xml; sourceTree = SOURCE_ROOT; };
+		34BD758D13B2836600596DCB /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxml.cpp; path = ../../addons/ofxXmlSettings/libs/tinyxml.cpp; sourceTree = SOURCE_ROOT; };
+		34BD758E13B2836600596DCB /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinyxml.h; path = ../../addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
+		34BD758F13B2836600596DCB /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxmlerror.cpp; path = ../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
+		34BD759013B2836600596DCB /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxmlparser.cpp; path = ../../addons/ofxXmlSettings/libs/tinyxmlparser.cpp; sourceTree = SOURCE_ROOT; };
+		34BD759213B2836600596DCB /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxXmlSettings.cpp; path = ../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
+		34BD759313B2836600596DCB /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxXmlSettings.h; path = ../../addons/ofxXmlSettings/src/ofxXmlSettings.h; sourceTree = SOURCE_ROOT; };
 		E45BE0390E8CC647009D7055 /* FreeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FreeImage.h; path = ../../../libs/freeimage/include/FreeImage.h; sourceTree = SOURCE_ROOT; };
 		E45BE03F0E8CC650009D7055 /* fmod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fmod.h; path = ../../../libs/fmodex/include/fmod.h; sourceTree = SOURCE_ROOT; };
 		E45BE0400E8CC650009D7055 /* fmod.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = fmod.hpp; path = ../../../libs/fmodex/include/fmod.hpp; sourceTree = SOURCE_ROOT; };
@@ -160,9 +171,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34BD758A13B2836600596DCB /* ofxXmlSettings */ = {
+			isa = PBXGroup;
+			children = (
+				34BD758B13B2836600596DCB /* install.xml */,
+				34BD758C13B2836600596DCB /* libs */,
+				34BD759113B2836600596DCB /* src */,
+			);
+			name = ofxXmlSettings;
+			path = ../../addons/ofxXmlSettings;
+			sourceTree = SOURCE_ROOT;
+		};
+		34BD758C13B2836600596DCB /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				34BD758D13B2836600596DCB /* tinyxml.cpp */,
+				34BD758E13B2836600596DCB /* tinyxml.h */,
+				34BD758F13B2836600596DCB /* tinyxmlerror.cpp */,
+				34BD759013B2836600596DCB /* tinyxmlparser.cpp */,
+			);
+			name = libs;
+			path = ../../addons/ofxXmlSettings/libs;
+			sourceTree = SOURCE_ROOT;
+		};
+		34BD759113B2836600596DCB /* src */ = {
+			isa = PBXGroup;
+			children = (
+				34BD759213B2836600596DCB /* ofxXmlSettings.cpp */,
+				34BD759313B2836600596DCB /* ofxXmlSettings.h */,
+			);
+			name = src;
+			path = ../../addons/ofxXmlSettings/src;
+			sourceTree = SOURCE_ROOT;
+		};
 		BB4B018C10F6955C006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				34BD758A13B2836600596DCB /* ofxXmlSettings */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -535,6 +580,10 @@
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				34BD74D213B2285900596DCB /* Sprite.cpp in Sources */,
 				34BD754713B22B2000596DCB /* SpriteManager.cpp in Sources */,
+				34BD759413B2836600596DCB /* tinyxml.cpp in Sources */,
+				34BD759513B2836600596DCB /* tinyxmlerror.cpp in Sources */,
+				34BD759613B2836600596DCB /* tinyxmlparser.cpp in Sources */,
+				34BD759713B2836600596DCB /* ofxXmlSettings.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

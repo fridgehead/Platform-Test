@@ -1,0 +1,23 @@
+<image file="ass.png"/>
+<animations num="4" width="33" height="54">
+	<anim>
+		<index id = "0"/>
+		<row id = "1"/>
+		<frames length="11"/>
+	</anim>
+	<anim id="1">
+		<index id = "1"/>
+		<row id = "0"/>
+		<frames length="3"/>
+	</anim>
+	<anim id="5">
+		<index id = "5"/>
+		<row id = "3"/>
+		<frames length="7"/>
+	</anim>
+	<anim id="3">
+		<index id = "3"/>
+		<row id = "2"/>
+		<frames length="10"/>
+	</anim>
+</animations>
