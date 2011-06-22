@@ -16,6 +16,7 @@ GameSprite::GameSprite(SpriteManager* spriteman){
 	currentFrame = 0;
 	lastFrameTime = 0;
 	spriteMan = spriteman;
+	mirror = false;
 	
 }
 
@@ -74,7 +75,12 @@ void GameSprite::think(){
 		int ct = 0;
 		for(int x = 0; x < width; x++){
 			for(int y = 0; y < height; y++){
-				int subPos = (x + y * width) * 4;
+				int subPos = 0;
+				if(mirror){
+					subPos = ((width - x) + y * width) * 4;
+				} else {
+					subPos = (x + y * width) * 4;
+				}
 				int mainPos = ((srcX + x) + (srcY + y) * currentImageData->image.width) * 4;
 				newPix[subPos] = pix[mainPos];
 				newPix[subPos + 1] = pix[mainPos + 1];

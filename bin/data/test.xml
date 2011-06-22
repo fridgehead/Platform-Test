@@ -1,0 +1,8 @@
+<image file="test.png"/>
+<animations num="1" width="32" height="32">
+	<anim>
+		<index id = "0"/>
+		<row id = "0"/>
+		<frames length="4"/>
+	</anim>
+</animations>

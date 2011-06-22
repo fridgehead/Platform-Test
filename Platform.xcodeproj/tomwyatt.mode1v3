@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>34BD778713B2A38000596DCB</string>
+						<string>34BD77F613B2AADC00596DCB</string>
 						<key>history</key>
 						<array>
 							<string>34BD778113B2A37600596DCB</string>
@@ -235,7 +235,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>491 169 949 709 0 0 1440 878 </string>
+				<string>167 169 949 709 0 0 1440 878 </string>
 			</dict>
 		</dict>
 	</array>
@@ -317,7 +317,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
+									<integer>6</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -358,7 +358,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Sprite.h</string>
+								<string>testApp.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -366,23 +366,23 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Sprite.h</string>
+										<string>testApp.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>34BD778413B2A38000596DCB</string>
+										<string>34BD77F513B2AADC00596DCB</string>
 										<key>history</key>
 										<array>
 											<string>34BD751D13B229D500596DCB</string>
 											<string>34BD759A13B2843800596DCB</string>
 											<string>34BD759B13B2843800596DCB</string>
 											<string>34BD75BB13B2851100596DCB</string>
-											<string>34BD75F913B2897600596DCB</string>
 											<string>34BD75FA13B2897600596DCB</string>
 											<string>34BD75FB13B2897600596DCB</string>
 											<string>34BD766913B28E4300596DCB</string>
 											<string>34BD767A13B28F5B00596DCB</string>
-											<string>34BD76EF13B29D6500596DCB</string>
+											<string>34BD779213B2A50500596DCB</string>
+											<string>34BD75F913B2897600596DCB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -580,13 +580,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>34BD778813B2A38000596DCB</string>
 		<string>34BD753313B229D500596DCB</string>
 		<string>34BD753413B229D500596DCB</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>34BD74B213B2272800596DCB</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/tomwyatt/dev/cpp/apps/Platform/Platform.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>34BD778513B2A38000596DCB</string>
 	</array>
 	<key>WindowString</key>

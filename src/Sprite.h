@@ -34,6 +34,8 @@ public:
 	void setAnimation(AnimationName anim);
 	
 	ofPoint pos;
+	bool mirror;
+	
 	
 private:
 		
@@ -45,6 +47,7 @@ private:
 	long lastFrameTime;
 	SpriteManager* spriteMan;
 	int spriteDataIndex;
+	
 	
 	
 };

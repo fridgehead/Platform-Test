@@ -22,10 +22,13 @@ class testApp : public ofBaseApp{
 		void windowResized(int w, int h);
 	
 	GameSprite* sprite;
+	GameSprite* testSprite;
 	SpriteManager spriteManager;
 	ofImage test;
 	
 	AnimationName t;
+	int playerX;
+	int dir;
 };
 
 #endif
