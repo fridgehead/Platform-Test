@@ -19,6 +19,10 @@ GameObject::~GameObject(){
 
 }
 
+ofRectangle GameObject::getBoundingBox(){
+	return ofRectangle(worldPos.x, worldPos.y, boundingBoxSize.x, boundingBoxSize.y);
+}
+
 Player::Player(ofPoint worldPosition, GameSprite* spt) : GameObject(worldPosition, spt){
 }
 

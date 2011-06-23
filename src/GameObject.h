@@ -18,9 +18,10 @@ public:
 	GameObject(ofPoint worldPosition, GameSprite* spt);
 	~GameObject();
 	virtual void think() = 0;
-	
+	ofRectangle getBoundingBox();
 	
 	ofPoint worldPos;
+	ofPoint boundingBoxSize;
 	
 protected:
 	GameSprite* sprite;
@@ -33,6 +34,9 @@ public:
 	Player(ofPoint worldPosition, GameSprite* spt);
 	~Player();
 	void think();
+	
+	bool isMoving, isJumping, isOnGround;
+	
 	
 };
 

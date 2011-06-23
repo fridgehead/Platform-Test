@@ -15,6 +15,7 @@
 #include "Sprite.h"
 #include "ofMain.h"
 #include "Camera.h"
+#include "GameObject.h"
 
 struct MapBlock{
 	ImageData* sprite;
@@ -30,6 +31,7 @@ public:
 	//returns array indices of mapblocks in the map for a given area
 	void getMapArea(ofRectangle area, GameSprite* blocks);
 	void drawMap(Camera* cam);
+	bool checkCollision(GameObject* subject);
 	
 	
 	vector<GameSprite> mapData;

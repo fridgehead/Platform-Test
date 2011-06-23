@@ -26,6 +26,7 @@ void testApp::setup(){
 	ofSetFrameRate(30);
 	
 	testPlayer = new Player(ofPoint(200,200), testSprite);
+	testPlayer->boundingBoxSize = ofPoint(33,54);
 	
 }
 
@@ -53,6 +54,8 @@ void testApp::update(){
 		cy = gameMap->mapWidth * 64;
 	}
 	camera->worldPosition = ofPoint(cx, cy);
+	
+	gameMap->checkCollision((GameObject*)testPlayer);
 }
 
 //--------------------------------------------------------------

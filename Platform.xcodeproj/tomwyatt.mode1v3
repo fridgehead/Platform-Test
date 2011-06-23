@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>34AC2FD213B3F9C600B92DC7</string>
+						<string>34AC2FFE13B3FF8A00B92DC7</string>
 						<key>history</key>
 						<array>
 							<string>34AC2F8A13B3F5B700B92DC7</string>
@@ -235,31 +235,31 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>531 169 949 709 0 0 1440 878 </string>
+				<string>489 169 949 709 0 0 1440 878 </string>
 			</dict>
 		</dict>
 		<dict>
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>34AC2FD313B3F9C600B92DC7</string>
+				<string>34AC2FF813B3FF6900B92DC7</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>GameObject.h</string>
+				<string>Map.cpp</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>34AC2FD413B3F9C600B92DC7</string>
+						<string>34AC2FF913B3FF6900B92DC7</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>GameObject.h</string>
+						<string>Map.cpp</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>34AC2FD513B3F9C600B92DC7</string>
+						<string>34AC2FFF13B3FF8A00B92DC7</string>
 						<key>history</key>
 						<array>
-							<string>34AC2FC813B3F99300B92DC7</string>
+							<string>34AC2FF313B3FF5A00B92DC7</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -271,51 +271,11 @@
 			<key>Geometry</key>
 			<dict>
 				<key>Frame</key>
-				<string>{{0, 20}, {707, 357}}</string>
+				<string>{{0, 20}, {905, 714}}</string>
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>21 369 707 398 0 0 1440 878 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>34AC2F2713B3EF1700B92DC7</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>Sprite.h</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>34AC2F2813B3EF1700B92DC7</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>Sprite.h</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>34AC2FD613B3F9C600B92DC7</string>
-						<key>history</key>
-						<array>
-							<string>34AC2F2513B3EE7400B92DC7</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {516, 542}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>0 295 516 583 0 0 1440 878 </string>
+				<string>207 123 905 755 0 0 1440 878 </string>
 			</dict>
 		</dict>
 	</array>
@@ -397,7 +357,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>15</integer>
+									<integer>12</integer>
 									<integer>3</integer>
 									<integer>0</integer>
 								</array>
@@ -438,7 +398,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>GameObject.h</string>
+								<string>Map.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -446,11 +406,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>GameObject.h</string>
+										<string>Map.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>34AC2FD113B3F9C600B92DC7</string>
+										<string>34AC2FFD13B3FF8A00B92DC7</string>
 										<key>history</key>
 										<array>
 											<string>34BD751D13B229D500596DCB</string>
@@ -464,12 +424,12 @@
 											<string>34AC2D8313B3D93800B92DC7</string>
 											<string>34AC2D8413B3D93800B92DC7</string>
 											<string>34AC2DDE13B3E01C00B92DC7</string>
-											<string>34AC2E7913B3E4A500B92DC7</string>
 											<string>34AC2E7A13B3E4A500B92DC7</string>
 											<string>34AC2E7B13B3E4A500B92DC7</string>
 											<string>34AC2F9B13B3F82F00B92DC7</string>
 											<string>34AC2F9C13B3F82F00B92DC7</string>
-											<string>34AC2F9D13B3F82F00B92DC7</string>
+											<string>34AC2FF613B3FF6900B92DC7</string>
+											<string>34AC2FED13B3FF3A00B92DC7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -667,15 +627,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>34AC2FD713B3F9C600B92DC7</string>
 		<string>34AC2D7C13B3D90A00B92DC7</string>
 		<string>34AC2D7D13B3D90A00B92DC7</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>34BD74B213B2272800596DCB</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>34AC2F2713B3EF1700B92DC7</string>
 		<string>/Users/tomwyatt/dev/cpp/apps/Platform/Platform.xcodeproj</string>
-		<string>34AC2FD313B3F9C600B92DC7</string>
+		<string>34AC2FF813B3FF6900B92DC7</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>34AC2F9F13B3F82F00B92DC7</string>
 	</array>
 	<key>WindowString</key>
@@ -700,7 +658,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>GameObject.cpp</string>
+								<string>Map.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

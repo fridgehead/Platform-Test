@@ -84,6 +84,12 @@ void GameMap::drawMap(Camera* cam){
 	
 }
 
+bool GameMap::checkCollision(GameObject* subject){
+	
+	return false;
+	
+}
+
 
 void GameMap::loadFromFile(string file){
 
