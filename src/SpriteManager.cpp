@@ -62,16 +62,20 @@ int SpriteManager::loadDataFile(string tag){
 	int animId;
 	int rowId;
 	int frameLength;
+	int frameSpeed;
 	xml.pushTag("animations", 0);
 	for(int an = 0; an < numAnims; an++){
 		xml.pushTag("anim", an);
 		animId = xml.getAttribute("index", "id", 0.0, 0);	//matches the enums for animation types
 		rowId = xml.getAttribute("row", "id", 0.0, 0);
 		frameLength = xml.getAttribute("frames", "length", 0.0, 0);	
+		frameSpeed = xml.getAttribute("frames", "speed", 10.0, 0);	
+
 		Animation a;
 		a.numFrames = frameLength;
 		a.index = animId;
 		a.spriteRow = rowId;
+		a.animSpeed = frameSpeed;
 		temp.animations.push_back(a);
 		
 		

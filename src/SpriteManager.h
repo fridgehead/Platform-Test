@@ -17,6 +17,7 @@ struct Animation{
 	int numFrames;	//number of frames
 	int index;		//animation name
 	int spriteRow;	//row in sprite sheet
+	int animSpeed;
 };
 
 struct ImageData {

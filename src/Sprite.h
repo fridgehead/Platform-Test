@@ -27,15 +27,17 @@ class GameSprite {
 	
 public:
 	GameSprite (SpriteManager* spriteMan);
+	GameSprite();
 	~GameSprite();
 	void think();
-	void draw();
+	void draw(int x, int y, int scale);
 	void loadData(string tag);
 	void setAnimation(AnimationName anim);
 	
 	ofPoint pos;
 	bool mirror;
-	
+	bool empty;
+	SpriteManager* spriteMan;
 	
 private:
 		
@@ -45,7 +47,6 @@ private:
 
 	ofImage currentImage;
 	long lastFrameTime;
-	SpriteManager* spriteMan;
 	int spriteDataIndex;
 	
 	

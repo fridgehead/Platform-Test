@@ -5,6 +5,8 @@
 #include "ofMain.h"
 #include "Sprite.h"
 #include "SpriteManager.h"
+#include "Map.h"
+#include "Camera.h"
 
 class testApp : public ofBaseApp{
 
@@ -24,10 +26,12 @@ class testApp : public ofBaseApp{
 	GameSprite* sprite;
 	GameSprite* testSprite;
 	SpriteManager spriteManager;
+	GameMap* gameMap;
+	Camera* camera;
 	ofImage test;
 	
 	AnimationName t;
-	int playerX;
+	int playerX,playerY;
 	int dir;
 };
 

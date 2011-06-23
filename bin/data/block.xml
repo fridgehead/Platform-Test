@@ -1,0 +1,8 @@
+<image file="block.png"/>
+<animations num="1" width="30" height="32">
+	<anim>
+		<index id = "0"/>
+		<row id = "0"/>
+		<frames length="2" speed="1000"/>
+	</anim>
+</animations>

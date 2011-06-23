@@ -17,13 +17,19 @@ GameSprite::GameSprite(SpriteManager* spriteman){
 	lastFrameTime = 0;
 	spriteMan = spriteman;
 	mirror = false;
+	empty = false;
 	
 }
 
+GameSprite::~GameSprite(){
+}
+
 void GameSprite::loadData(string tag){
+	cout << "Loading data for: " << tag <<endl;
 	spriteDataIndex = spriteMan->loadDataFile(tag);
+	cout << ".... index is " << spriteDataIndex << endl;
 	currentImageData = &(spriteMan->spriteData[spriteDataIndex]);
-	cout << spriteDataIndex << endl;
+	cout << "!!!!tag: " << currentImageData->tag << endl;
 	currentImage.allocate(currentImageData->dimensions.x, currentImageData->dimensions.y, OF_IMAGE_COLOR_ALPHA);
 	currentImage.setAnchorPoint(currentImageData->dimensions.x / 2 , currentImageData->dimensions.y /2 );
 	setAnimation(ANIM_WALK);
@@ -33,33 +39,50 @@ void GameSprite::loadData(string tag){
 void GameSprite::setAnimation(AnimationName anim){
 	
 	//look up anim in spritemanager
+	if(spriteDataIndex > spriteMan->spriteData.size()){
+		cout << "FUCK" << endl;
+	}
 	currentImageData = &(spriteMan->spriteData[spriteDataIndex]);
+	cout << "setting animation for " << currentImageData->tag << endl;
 	vector<Animation>::iterator it;
+	bool ok;
+	ok = false;
 	for( it = currentImageData->animations.begin(); it != currentImageData->animations.end(); it++){
 		if(it->index == (int)anim){
-			cout << "found animation id: " << anim << endl;
-			currentAnimation = *it;
+			cout << "Set animation id: " << anim << endl;
+			currentAnimation.index = it->index;
+			currentAnimation.numFrames = it->numFrames;
+			currentAnimation.spriteRow = it->spriteRow;
+			currentAnimation.animSpeed = it->animSpeed;
+			//cout << "got animation index: " << currentAnimation.numFrames << endl;
 			currentFrame = 0;
-			
+			ok = true;
 			
 			
 			
 		}
 	}
+	if(!ok){
+		cout << "setting animation that doesnt exist!!" << endl;
+	}
 	
 }
 
-void GameSprite::draw(){
-	ofRect(pos.x, pos.y, 10,10);
+void GameSprite::draw(int x, int y, int scale){
+	//ofRect(pos.x, pos.y, 10,10);
 	
-	currentImage.draw(pos.x,pos.y, currentImageData->dimensions.x * 4, currentImageData->dimensions.y * 4);
+	currentImage.draw(x,y, currentImageData->dimensions.x * scale  , currentImageData->dimensions.y * scale);
 	
 }
+
+
 
 
 
 void GameSprite::think(){
-	if(lastFrameTime + 60  < ofGetElapsedTimeMillis() ){
+	if(lastFrameTime + currentAnimation.animSpeed  < ofGetElapsedTimeMillis() ){
+		currentImageData = &(spriteMan->spriteData[spriteDataIndex]);
+		//cout << "think : " << currentImageData->tag << endl;
 		lastFrameTime = ofGetElapsedTimeMillis();
 		currentFrame ++;
 		currentFrame %= currentAnimation.numFrames ;

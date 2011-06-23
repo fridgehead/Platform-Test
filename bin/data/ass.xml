@@ -3,21 +3,21 @@
 	<anim>
 		<index id = "0"/>
 		<row id = "1"/>
-		<frames length="11"/>
+		<frames length="11" speed = "60"/>
 	</anim>
 	<anim id="1">
 		<index id = "1"/>
 		<row id = "0"/>
-		<frames length="3"/>
+		<frames length="3" speed = "200"/>
 	</anim>
 	<anim id="5">
 		<index id = "5"/>
 		<row id = "3"/>
-		<frames length="7"/>
+		<frames length="7" speed = "60"/>
 	</anim>
 	<anim id="3">
 		<index id = "3"/>
 		<row id = "2"/>
-		<frames length="10"/>
+		<frames length="10" speed = "60"/>
 	</anim>
 </animations>
