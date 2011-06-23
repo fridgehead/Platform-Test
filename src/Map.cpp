@@ -20,15 +20,16 @@ GameMap::GameMap(SpriteManager* spriteMan, int width, int height){
 	blockSprite[0]= new GameSprite(spriteManager);
 	blockSprite[0]->loadData("block");
 	blockSprite[0]->setAnimation(ANIM_WALK);
+	blockSprite[0]->think();
 
 	blockSprite[1]= new GameSprite(spriteManager);
-	blockSprite[1]->loadData("rock");
-	blockSprite[1]->setAnimation(ANIM_WALK);
-	
+	blockSprite[1]->loadData("grassTiles");
+	blockSprite[1]->setAnimation(TILE_MIDDLE);
+	blockSprite[1]->think();	
 	blockSprite[2] = new GameSprite(spriteManager);
 	blockSprite[2]->empty = true;
 	
-	
+	int ct = 0;
 	for(int x = 0; x < width; x++){
 		for(int y = 0; y < height; y++){
 			if(x % 3){
@@ -37,6 +38,8 @@ GameMap::GameMap(SpriteManager* spriteMan, int width, int height){
 				if(ofRandom(0,1) > 0.5f){
 					mapData.push_back(	*blockSprite[0]);
 				} else {
+					ct++;
+					blockSprite[1]->setAnimation((AnimationName)(6 + ct % 6));
 					mapData.push_back(	*blockSprite[1]);
 				}
 			}
@@ -79,22 +82,6 @@ void GameMap::drawMap(Camera* cam){
 		}
 	}
 	
-	/*
-	for(int xp = 0; xp < w; xp++){
-		for(int yp = 0; yp < h; yp++){
-			
-			if( x + xp < mapWidth && xp + x > 0 && yp + y < mapWidth && yp + y > 0){
-				GameSprite* m = &mapData[(xp + x) + (yp + y) * mapWidth];
-				if(m->empty == false){
-					m->think();
-					//m->pos = ofPoint(xp * 32, yp * 32);
-					m->draw(xp *32 * 2,yp * 32 * 2,2);
-				}
-			} 
-			
-		}
-	}*/
-	
 }
 
 
@@ -103,6 +90,7 @@ void GameMap::loadFromFile(string file){
 }
 
 //returns array indices of mapblocks in the map for a given area
+//not used because its SHIT
 void GameMap::getMapArea(ofRectangle area, GameSprite* blocks){
 	int w = (int)area.width;
 	int h = (int)area.height;

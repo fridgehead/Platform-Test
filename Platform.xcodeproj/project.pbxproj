@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		348FA8B713B360A2005381D3 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8B613B360A2005381D3 /* Map.cpp */; };
 		34AC2DB413B3DABA00B92DC7 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34AC2DB313B3DABA00B92DC7 /* Camera.cpp */; };
+		34AC2F8413B3F3CA00B92DC7 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34AC2F8313B3F3CA00B92DC7 /* GameObject.cpp */; };
 		34BD74D213B2285900596DCB /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34BD74D113B2285800596DCB /* Sprite.cpp */; };
 		34BD754713B22B2000596DCB /* SpriteManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34BD754613B22B2000596DCB /* SpriteManager.cpp */; };
 		34BD759413B2836600596DCB /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34BD758D13B2836600596DCB /* tinyxml.cpp */; };
@@ -90,6 +91,8 @@
 		348FA8B613B360A2005381D3 /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
 		34AC2DB213B3DABA00B92DC7 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		34AC2DB313B3DABA00B92DC7 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		34AC2F8213B3F3CA00B92DC7 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
+		34AC2F8313B3F3CA00B92DC7 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
 		34BD74D013B2285800596DCB /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
 		34BD74D113B2285800596DCB /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
 		34BD754513B22B2000596DCB /* SpriteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteManager.h; sourceTree = "<group>"; };
@@ -421,6 +424,8 @@
 				348FA8B613B360A2005381D3 /* Map.cpp */,
 				34AC2DB213B3DABA00B92DC7 /* Camera.h */,
 				34AC2DB313B3DABA00B92DC7 /* Camera.cpp */,
+				34AC2F8213B3F3CA00B92DC7 /* GameObject.h */,
+				34AC2F8313B3F3CA00B92DC7 /* GameObject.cpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -596,6 +601,7 @@
 				34BD759713B2836600596DCB /* ofxXmlSettings.cpp in Sources */,
 				348FA8B713B360A2005381D3 /* Map.cpp in Sources */,
 				34AC2DB413B3DABA00B92DC7 /* Camera.cpp in Sources */,
+				34AC2F8413B3F3CA00B92DC7 /* GameObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 #include "SpriteManager.h"
 #include "Map.h"
 #include "Camera.h"
+#include "GameObject.h"
 
 class testApp : public ofBaseApp{
 
@@ -29,6 +30,7 @@ class testApp : public ofBaseApp{
 	GameMap* gameMap;
 	Camera* camera;
 	ofImage test;
+	Player* testPlayer;
 	
 	AnimationName t;
 	int playerX,playerY;

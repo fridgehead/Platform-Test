@@ -14,7 +14,7 @@
 GameSprite::GameSprite(SpriteManager* spriteman){
 	pos = ofPoint(10,10);
 	currentFrame = 0;
-	lastFrameTime = 0;
+	lastFrameTime = ofGetElapsedTimeMillis();
 	spriteMan = spriteman;
 	mirror = false;
 	empty = false;
@@ -31,7 +31,7 @@ void GameSprite::loadData(string tag){
 	currentImageData = &(spriteMan->spriteData[spriteDataIndex]);
 	cout << "!!!!tag: " << currentImageData->tag << endl;
 	currentImage.allocate(currentImageData->dimensions.x, currentImageData->dimensions.y, OF_IMAGE_COLOR_ALPHA);
-	currentImage.setAnchorPoint(currentImageData->dimensions.x / 2 , currentImageData->dimensions.y /2 );
+	//currentImage.setAnchorPoint(currentImageData->dimensions.x / 2 , currentImageData->dimensions.y /2 );
 	setAnimation(ANIM_WALK);
 	
 }
@@ -56,6 +56,7 @@ void GameSprite::setAnimation(AnimationName anim){
 			currentAnimation.animSpeed = it->animSpeed;
 			//cout << "got animation index: " << currentAnimation.numFrames << endl;
 			currentFrame = 0;
+			lastFrameTime = ofGetElapsedTimeMillis() - it->animSpeed - 10;
 			ok = true;
 			
 			

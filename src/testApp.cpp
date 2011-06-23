@@ -25,24 +25,28 @@ void testApp::setup(){
 	dir = 0;
 	ofSetFrameRate(30);
 	
+	testPlayer = new Player(ofPoint(200,200), testSprite);
+	
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
+	testPlayer->think();
+	
 	sprite->pos = ofPoint(mouseX,mouseY);
 	sprite->think();
 	playerX += dir * 10;
 	//testSprite->pos = ofPoint(playerX, 200);
-	testSprite->think();
+	//testSprite->think();
+	testPlayer->worldPos = ofPoint(playerX, playerY);
 	
-	
-	int cx = playerX - 512;
+	int cx = testPlayer->worldPos.x - 512;
 	if (cx <0){
 		cx = 0;
 	} else if (cx > gameMap->mapWidth * 64){
 		cx = gameMap->mapWidth * 64;
 	}
-	int cy = playerY - 384;
+	int cy = testPlayer->worldPos.y - 384;
 	if (cy < 0){
 		cy = 0;
 	} else if (cy > gameMap->mapWidth * 64){
@@ -53,29 +57,17 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-	
+	ofBackground(53,171,254);
 	//draw bg
-	//GameSprite* mapArea;
-	//gameMap->getMapArea(ofRectangle(0, 0, 10, 10), mapArea);
 	
-	/*for(int x = 0; x < 10; x ++){
-		for(int y = 0; y < 10; y++){
-			GameSprite* b = &mapArea[x + y * 10];
-			if(b != 0){
-				//b->think();
-				//b->pos = ofPoint(x * 32, y * 32);
-				//b->draw();
-			}
-		}
-	}*/
-	//delete[] mapArea;
 	gameMap->drawMap(camera);
-	
-	
-	
-	sprite->draw(200,200,4);
-	
-	ofPoint spriteScreenPos = camera->worldToScreen(ofPoint(playerX, playerY));
+	//screen space drawing
+	ofPoint spriteScreenPos = camera->worldToScreen(ofPoint(200, 200));
+	if(spriteScreenPos.x != -1 && spriteScreenPos.y != -1){
+		sprite->draw(spriteScreenPos.x, spriteScreenPos.y,4);
+	}
+	//world space drawing
+	spriteScreenPos = camera->worldToScreen(ofPoint(playerX, playerY));
 	if(spriteScreenPos.x != -1 && spriteScreenPos.y != -1){
 		testSprite->draw(spriteScreenPos.x, spriteScreenPos.y,4);
 	}
