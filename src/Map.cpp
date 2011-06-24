@@ -20,12 +20,14 @@ GameMap::GameMap(SpriteManager* spriteMan, int width, int height){
 	blockSprite[0]= new GameSprite(spriteManager);
 	blockSprite[0]->loadData("block");
 	blockSprite[0]->setAnimation(ANIM_WALK);
+	blockSprite[0]->collided = false;
 	blockSprite[0]->think();
 
 	blockSprite[1]= new GameSprite(spriteManager);
 	blockSprite[1]->loadData("grassTiles");
 	blockSprite[1]->setAnimation(TILE_MIDDLE);
 	blockSprite[1]->think();	
+	blockSprite[1]->collided = false;
 	blockSprite[2] = new GameSprite(spriteManager);
 	blockSprite[2]->empty = true;
 	
@@ -75,6 +77,11 @@ void GameMap::drawMap(Camera* cam){
 				if(m->empty == false){
 					m->think();
 					//m->pos = ofPoint(xp * 32, yp * 32);
+					if(m->collided){
+						ofSetColor(255, 0, 0);
+					} else {
+						ofSetColor(255, 255, 255);
+					}
 					m->draw(xp * 64 - (xShift),yp * 64 - (yShift),2);
 				}
 			} 
@@ -85,6 +92,28 @@ void GameMap::drawMap(Camera* cam){
 }
 
 bool GameMap::checkCollision(GameObject* subject){
+	
+	//check for bb intersections with nearest blocks
+	ofPoint subjectPos = subject->worldPos;
+	ofPoint subjectBB = subject->boundingBoxSize;
+	
+	//find all tiles in the BB area
+	int xMin = floor((subjectPos.x ) / 64);
+	int yMin = floor((subjectPos.y ) / 64);
+	int xMax = ceil((subjectPos.x + subjectBB.x ) / 64);
+	int yMax = ceil((subjectPos.y + subjectBB.y ) / 64);	
+	cout<< "!!!!!!!!!" << endl;
+	for(int x = xMin; x < xMax; x++){
+		for(int y = yMin; y < yMax; y++){	
+			
+			if( x < mapWidth && x > 0 && y < mapHeight && y  > 0){
+				cout << "col: " << x << ":" << y << endl;
+				mapData[x + y * mapWidth].collided = true;
+			}
+		}
+	}
+				
+			
 	
 	return false;
 	

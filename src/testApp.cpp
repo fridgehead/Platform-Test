@@ -26,7 +26,7 @@ void testApp::setup(){
 	ofSetFrameRate(30);
 	
 	testPlayer = new Player(ofPoint(200,200), testSprite);
-	testPlayer->boundingBoxSize = ofPoint(33,54);
+	testPlayer->boundingBoxSize = ofPoint(66,108);
 	
 }
 
@@ -72,7 +72,9 @@ void testApp::draw(){
 	//world space drawing
 	spriteScreenPos = camera->worldToScreen(ofPoint(playerX, playerY));
 	if(spriteScreenPos.x != -1 && spriteScreenPos.y != -1){
-		testSprite->draw(spriteScreenPos.x, spriteScreenPos.y,4);
+		testSprite->draw(spriteScreenPos.x, spriteScreenPos.y,2);
+		ofNoFill();
+		ofRect(spriteScreenPos.x, spriteScreenPos.y, testPlayer->boundingBoxSize.x, testPlayer->boundingBoxSize.y);
 	}
 }
 

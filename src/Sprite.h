@@ -47,6 +47,7 @@ public:
 	bool mirror;
 	bool empty;
 	SpriteManager* spriteMan;
+	bool collided;
 	
 private:
 		

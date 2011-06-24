@@ -20,6 +20,7 @@
 struct MapBlock{
 	ImageData* sprite;
 	bool breakable;
+	bool collided;
 };
 
 class GameMap {

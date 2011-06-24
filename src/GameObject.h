@@ -20,8 +20,8 @@ public:
 	virtual void think() = 0;
 	ofRectangle getBoundingBox();
 	
-	ofPoint worldPos;
-	ofPoint boundingBoxSize;
+	ofPoint worldPos;			//top left of sprite for now
+	ofPoint boundingBoxSize;	//worldPos + bb size defines BB
 	
 protected:
 	GameSprite* sprite;

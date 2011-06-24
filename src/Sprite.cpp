@@ -72,6 +72,7 @@ void GameSprite::setAnimation(AnimationName anim){
 void GameSprite::draw(int x, int y, int scale){
 	//ofRect(pos.x, pos.y, 10,10);
 	
+	
 	currentImage.draw(x,y, currentImageData->dimensions.x * scale  , currentImageData->dimensions.y * scale);
 	
 }
