@@ -48,16 +48,18 @@ public:
 	bool empty;
 	SpriteManager* spriteMan;
 	bool collided;
+	void setCurrentFrame(int frame); //uses current anim;
 	
 private:
-		
-	int currentFrame;
+	
+	int currentFrame, lastFrame;
 	Animation currentAnimation;
 	ImageData* currentImageData;
 
 	ofImage currentImage;
 	long lastFrameTime;
 	int spriteDataIndex;
+	
 	
 	
 	

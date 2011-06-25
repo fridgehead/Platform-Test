@@ -11,6 +11,14 @@
 #include "Map.h"
 #include "Camera.h"
 
+
+#define	COL_NONE 0
+#define	COL_TOP  1
+#define	COL_RIGHT  2
+#define	COL_BOTTOM  3
+#define	COL_LEFT  4
+
+
 GameMap::GameMap(SpriteManager* spriteMan, int width, int height){
 	spriteManager = spriteMan;
 	mapWidth = width;
@@ -20,14 +28,16 @@ GameMap::GameMap(SpriteManager* spriteMan, int width, int height){
 	blockSprite[0]= new GameSprite(spriteManager);
 	blockSprite[0]->loadData("block");
 	blockSprite[0]->setAnimation(ANIM_WALK);
+	blockSprite[0]->setCurrentFrame(0);
 	blockSprite[0]->collided = false;
 	blockSprite[0]->think();
 
 	blockSprite[1]= new GameSprite(spriteManager);
 	blockSprite[1]->loadData("grassTiles");
 	blockSprite[1]->setAnimation(TILE_MIDDLE);
-	blockSprite[1]->think();	
 	blockSprite[1]->collided = false;
+	
+	
 	blockSprite[2] = new GameSprite(spriteManager);
 	blockSprite[2]->empty = true;
 	
@@ -41,8 +51,8 @@ GameMap::GameMap(SpriteManager* spriteMan, int width, int height){
 					mapData.push_back(	*blockSprite[0]);
 				} else {
 					ct++;
-					blockSprite[1]->setAnimation((AnimationName)(6 + ct % 6));
-					mapData.push_back(	*blockSprite[1]);
+					//blockSprite[1]->setAnimation((AnimationName)(6 + ct % 6));
+					mapData.push_back(	*blockSprite[2]);
 				}
 			}
 			
@@ -102,20 +112,79 @@ bool GameMap::checkCollision(GameObject* subject){
 	int yMin = floor((subjectPos.y ) / 64);
 	int xMax = ceil((subjectPos.x + subjectBB.x ) / 64);
 	int yMax = ceil((subjectPos.y + subjectBB.y ) / 64);	
-	cout<< "!!!!!!!!!" << endl;
+	
+	bool didWeCollide = false;
+	int collisions = COL_NONE;
+	
+	bool onGround = false;
+	//subject->isOnGround = false;
 	for(int x = xMin; x < xMax; x++){
 		for(int y = yMin; y < yMax; y++){	
 			
 			if( x < mapWidth && x > 0 && y < mapHeight && y  > 0){
-				cout << "col: " << x << ":" << y << endl;
-				mapData[x + y * mapWidth].collided = true;
+				//these are tiles we are likely to collide with
+				GameSprite* b = &mapData[x + y * mapWidth];
+				if(b->empty != true ){
+					collisions = COL_NONE;
+					b->collided = true;
+					//do a smooth pixel collision test.
+					//return the hit position
+					//if were falling then stop us
+					
+					
+					//cout << ": player base pos: " << subject->worldPos.y + subjectBB.y  << " -- block pos " << y * 64<< endl;
+					
+					//check bottom edge is inside the collided tile
+					if((subjectPos.y + subjectBB.y) > (y * 64 ) && (subjectPos.y + subjectBB.y) <  (y * 64 ) + 64){
+						if( subject->isOnGround == false){
+							//hit the ground
+							
+							onGround = true;
+							subject->speed.y = 0;
+							subject->worldPos.y = ((y * 64 ) - subjectBB.y )  ;
+							//cout << "set: " << subject->worldPos.y << endl;
+							
+							subject->isJumping = false;
+							didWeCollide = true;
+							collisions |= COL_BOTTOM;
+							
+						}  else {
+							subject->speed.y = 0;
+							subject->worldPos.y = ((y * 64 ) - subjectBB.y )  ;
+							didWeCollide = true;
+							onGround = true;
+							collisions |= COL_BOTTOM;
+						}
+							
+					}
+					//right side of subject, left of block
+					if((subjectPos.x + subjectBB.x) >= (x * 64 ) && (subjectPos.x + subjectBB.x) <=  (x * 64 ) + 64 &&  collisions == COL_NONE){
+						subject->speed.x = 0;
+						subject->worldPos.x = ((x * 64 ) - subjectBB.x ) ;
+						collisions |= COL_LEFT;
+					}
+					//left of object, right of block
+					if((subjectPos.x ) >= (x * 64 ) && (subjectPos.x) <=  (x * 64 ) + 64 && collisions == COL_NONE){
+						subject->speed.x = 0;
+						subject->worldPos.x = ((x * 64 ) + 64 )  ;
+						collisions |= COL_RIGHT;
+					}
+					
+					//top of object, bottom of block
+					if((subjectPos.y ) >= (y * 64 ) && (subjectPos.y) <=  (y * 64 ) + 64 && collisions == COL_NONE){
+						subject->speed.y = 0;
+						subject->worldPos.y = ((y * 64 )  + 64)  ;
+						collisions |= COL_TOP;
+					}
+					
+				}
+				
 			}
 		}
 	}
-				
-			
+	subject->isOnGround = onGround;
 	
-	return false;
+	return didWeCollide;
 	
 }
 

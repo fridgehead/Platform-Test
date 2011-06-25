@@ -16,6 +16,7 @@ void testApp::setup(){
 	testSprite = new GameSprite(&spriteManager);
 	testSprite->pos = ofPoint(200,200);
 	testSprite->loadData("ass");
+	testSprite->setAnimation(ANIM_STOP);
 	testSprite->mirror = true;
 	
 	camera = new Camera(1024, 768);
@@ -25,21 +26,29 @@ void testApp::setup(){
 	dir = 0;
 	ofSetFrameRate(30);
 	
-	testPlayer = new Player(ofPoint(200,200), testSprite);
+	testPlayer = new Player(ofPoint(150,250), testSprite);
+	testPlayer->speed = ofPoint(0,0);
 	testPlayer->boundingBoxSize = ofPoint(66,108);
 	
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
+	
+	testPlayer->speed.x = dir * 10;
 	testPlayer->think();
+
+	gameMap->checkCollision((GameObject*)testPlayer);
+
+	
 	
 	sprite->pos = ofPoint(mouseX,mouseY);
 	sprite->think();
-	playerX += dir * 10;
+	playerX += dir * 3;
 	//testSprite->pos = ofPoint(playerX, 200);
 	//testSprite->think();
-	testPlayer->worldPos = ofPoint(playerX, playerY);
+	//testPlayer->worldPos = ofPoint(playerX, playerY);
+	
 	
 	int cx = testPlayer->worldPos.x - 512;
 	if (cx <0){
@@ -55,7 +64,6 @@ void testApp::update(){
 	}
 	camera->worldPosition = ofPoint(cx, cy);
 	
-	gameMap->checkCollision((GameObject*)testPlayer);
 }
 
 //--------------------------------------------------------------
@@ -67,10 +75,10 @@ void testApp::draw(){
 	//screen space drawing
 	ofPoint spriteScreenPos = camera->worldToScreen(ofPoint(200, 200));
 	if(spriteScreenPos.x != -1 && spriteScreenPos.y != -1){
-		sprite->draw(spriteScreenPos.x, spriteScreenPos.y,4);
+	//	sprite->draw(spriteScreenPos.x, spriteScreenPos.y,4);
 	}
 	//world space drawing
-	spriteScreenPos = camera->worldToScreen(ofPoint(playerX, playerY));
+	spriteScreenPos = camera->worldToScreen(ofPoint(testPlayer->worldPos.x, testPlayer->worldPos.y));
 	if(spriteScreenPos.x != -1 && spriteScreenPos.y != -1){
 		testSprite->draw(spriteScreenPos.x, spriteScreenPos.y,2);
 		ofNoFill();
@@ -98,10 +106,18 @@ void testApp::keyPressed(int key){
 			dir = 1;
 			break;
 		case 357:
-			playerY -= 10;
+			//playerY -= 10;
 			break;
 		case 359:
-			playerY += 10;
+			//playerY += 10;
+			break;
+		case 32:
+			if(testPlayer->isJumping == false){
+				testPlayer->speed.y = -30;
+				testPlayer->isJumping = true;
+				testPlayer->isOnGround = false;
+				cout << "jump" << endl;
+			}
 			break;
 	}
 

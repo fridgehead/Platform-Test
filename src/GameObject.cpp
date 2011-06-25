@@ -13,6 +13,8 @@ GameObject::GameObject(ofPoint worldPosition, GameSprite* spt){
 
 	worldPos = worldPosition;
 	sprite = spt;
+	speed = ofPoint(0,0);
+	isOnGround = false;
 }
 
 GameObject::~GameObject(){
@@ -32,6 +34,22 @@ Player::~Player(){
 }
 
 void Player::think(){
+	if(isOnGround){
+	
+		speed.y = 0;
+		cout << "ground " << endl;
+		isJumping = false;
+	} else {
+		cout << "not ground" << endl;
+		isJumping = true;
+		if(speed.y < 30){
+			speed.y += 2;
+		}
+	}
+	worldPos.y += speed.y;
+	worldPos.x += speed.x;
 	sprite->think();
+	
+	
 }
 

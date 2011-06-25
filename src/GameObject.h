@@ -22,6 +22,8 @@ public:
 	
 	ofPoint worldPos;			//top left of sprite for now
 	ofPoint boundingBoxSize;	//worldPos + bb size defines BB
+	ofPoint speed;
+	bool isMoving, isJumping, isOnGround;
 	
 protected:
 	GameSprite* sprite;
@@ -35,7 +37,7 @@ public:
 	~Player();
 	void think();
 	
-	bool isMoving, isJumping, isOnGround;
+	
 	
 	
 };

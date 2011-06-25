@@ -32,10 +32,10 @@ void GameSprite::loadData(string tag){
 	cout << "!!!!tag: " << currentImageData->tag << endl;
 	currentImage.allocate(currentImageData->dimensions.x, currentImageData->dimensions.y, OF_IMAGE_COLOR_ALPHA);
 	//currentImage.setAnchorPoint(currentImageData->dimensions.x / 2 , currentImageData->dimensions.y /2 );
-	setAnimation(ANIM_WALK);
+	//setAnimation(ANIM_WALK);
 	
 }
-	
+
 void GameSprite::setAnimation(AnimationName anim){
 	
 	//look up anim in spritemanager
@@ -61,6 +61,12 @@ void GameSprite::setAnimation(AnimationName anim){
 			
 			
 			
+			setCurrentFrame(currentFrame);
+			if(currentAnimation.animSpeed > 0){
+				think();
+			}
+			
+			
 		}
 	}
 	if(!ok){
@@ -77,25 +83,17 @@ void GameSprite::draw(int x, int y, int scale){
 	
 }
 
-
-
-
-
-void GameSprite::think(){
-	if(lastFrameTime + currentAnimation.animSpeed  < ofGetElapsedTimeMillis() ){
+void GameSprite::setCurrentFrame(int frame){
+	if (frame < currentAnimation.numFrames && currentFrame != lastFrame){
+		
 		currentImageData = &(spriteMan->spriteData[spriteDataIndex]);
-		//cout << "think : " << currentImageData->tag << endl;
-		lastFrameTime = ofGetElapsedTimeMillis();
-		currentFrame ++;
-		currentFrame %= currentAnimation.numFrames ;
-		//cout << currentFrame << endl;
-		//get the subimage of the sprite image
+		
 		int width = currentImageData->dimensions.x;
 		int height = currentImageData->dimensions.y;
 		unsigned char * newPix = new unsigned char [ width * height * 4];
 		unsigned char * pix = currentImageData->image.getPixels();
-
-		int srcX = currentFrame * width;
+		
+		int srcX = frame * width;
 		int srcY = currentAnimation.spriteRow * height;
 		int ct = 0;
 		for(int x = 0; x < width; x++){
@@ -115,10 +113,34 @@ void GameSprite::think(){
 		}
 		currentImage.setFromPixels(newPix, width,height, OF_IMAGE_COLOR_ALPHA, true);
 		
-			
-			
-		delete[] newPix;
 		
+		
+		delete[] newPix;
+	}
+}
+
+
+
+void GameSprite::think(){
+	if(currentAnimation.animSpeed > 0){
+		
+		
+		
+		
+		if(lastFrameTime + currentAnimation.animSpeed  < ofGetElapsedTimeMillis() ){
+			//currentImageData = &(spriteMan->spriteData[spriteDataIndex]);
+			//cout << "think : " << currentImageData->tag << endl;
+			lastFrameTime = ofGetElapsedTimeMillis();
+			lastFrame = currentFrame;
+			currentFrame ++;
+			currentFrame %= currentAnimation.numFrames ;
+			//cout << currentFrame << endl;
+			//get the subimage of the sprite image
+			setCurrentFrame(currentFrame);
+			
+		}
+	} else {
+		setCurrentFrame(currentFrame);
 	}
 	
 	
