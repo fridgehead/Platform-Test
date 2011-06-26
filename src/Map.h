@@ -10,12 +10,15 @@
 #ifndef	SPRITEY
 #define SPRITEY
 
+#define DEBUG
+
 
 #include "SpriteManager.h"
 #include "Sprite.h"
 #include "ofMain.h"
 #include "Camera.h"
 #include "GameObject.h"
+#include "Tmx.h"
 
 struct MapBlock{
 	ImageData* sprite;
@@ -38,8 +41,10 @@ public:
 	vector<GameSprite> mapData;
 	int mapWidth, mapHeight;
 	
-	GameSprite* blockSprite[3];
+	vector<GameSprite> blockSprite;
 	float BLOCKSIZE;
+	
+	Tmx::Map *tmxMap;
 	
 private:
 	SpriteManager* spriteManager;

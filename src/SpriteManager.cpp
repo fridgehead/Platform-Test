@@ -39,14 +39,14 @@ int SpriteManager::loadDataFile(string tag){
 	vector<ImageData>::iterator it;
 	for( it = spriteData.begin(); it != spriteData.end(); it++){
 		if(it->tag == tag){
-			cout << "found it!" << endl;
+		//	cout << "found it!" << endl;
 			return it - spriteData.begin();
 		}
 	}
 	ImageData temp;
 	
 	//ok so we didnt find it, load it up!
-	cout << "loading .. " << tag << endl;
+	//cout << "loading .. " << tag << endl;
 	temp.tag = tag;
 	xml.loadFile(ofToDataPath(tag + ".xml"));
 	//get our image
@@ -58,7 +58,7 @@ int SpriteManager::loadDataFile(string tag){
 	
 	temp.dimensions = ofPoint(x,y);
 	int numAnims = xml.getAttribute("animations", "num", 0.0, 0);
-	cout << "num anims " << numAnims << endl;
+	//cout << "num anims " << numAnims << endl;
 	int animId;
 	int rowId;
 	int frameLength;

@@ -2,10 +2,10 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-	
+	ready = false;
 	
 	gameMap = new GameMap(&spriteManager,100,20);
-	
+	gameMap->loadFromFile("doesntmatter");
 	
 	sprite = new GameSprite(&spriteManager);
 	sprite->pos = ofPoint(20,20);
@@ -26,15 +26,18 @@ void testApp::setup(){
 	dir = 0;
 	ofSetFrameRate(30);
 	
-	testPlayer = new Player(ofPoint(150,250), testSprite);
+	testPlayer = new Player(ofPoint(150,550), testSprite);
 	testPlayer->speed = ofPoint(0,0);
 	testPlayer->boundingBoxSize = ofPoint(66,108);
+	ready = true;
+	
+		
 	
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-	
+	if(ready){
 	testPlayer->speed.x = dir * 10;
 	testPlayer->think();
 
@@ -63,11 +66,12 @@ void testApp::update(){
 		cy = gameMap->mapWidth * 64;
 	}
 	camera->worldPosition = ofPoint(cx, cy);
-	
+	}
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
+
 	ofBackground(53,171,254);
 	//draw bg
 	
@@ -84,6 +88,9 @@ void testApp::draw(){
 		ofNoFill();
 		ofRect(spriteScreenPos.x, spriteScreenPos.y, testPlayer->boundingBoxSize.x, testPlayer->boundingBoxSize.y);
 	}
+
+
+
 }
 
 //--------------------------------------------------------------

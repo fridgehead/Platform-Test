@@ -18,6 +18,7 @@ GameSprite::GameSprite(SpriteManager* spriteman){
 	spriteMan = spriteman;
 	mirror = false;
 	empty = false;
+	lastFrame = -1;
 	
 }
 
@@ -25,31 +26,31 @@ GameSprite::~GameSprite(){
 }
 
 void GameSprite::loadData(string tag){
-	cout << "Loading data for: " << tag <<endl;
+	//cout << "Loading data for: " << tag <<endl;
 	spriteDataIndex = spriteMan->loadDataFile(tag);
-	cout << ".... index is " << spriteDataIndex << endl;
+	//cout << ".... index is " << spriteDataIndex << endl;
 	currentImageData = &(spriteMan->spriteData[spriteDataIndex]);
-	cout << "!!!!tag: " << currentImageData->tag << endl;
+	//cout << "!!!!tag: " << currentImageData->tag << endl;
 	currentImage.allocate(currentImageData->dimensions.x, currentImageData->dimensions.y, OF_IMAGE_COLOR_ALPHA);
 	//currentImage.setAnchorPoint(currentImageData->dimensions.x / 2 , currentImageData->dimensions.y /2 );
 	//setAnimation(ANIM_WALK);
 	
 }
 
-void GameSprite::setAnimation(AnimationName anim){
+void GameSprite::setAnimation(int anim){
 	
 	//look up anim in spritemanager
 	if(spriteDataIndex > spriteMan->spriteData.size()){
 		cout << "FUCK" << endl;
 	}
 	currentImageData = &(spriteMan->spriteData[spriteDataIndex]);
-	cout << "setting animation for " << currentImageData->tag << endl;
+	//cout << "setting animation for " << currentImageData->tag << endl;
 	vector<Animation>::iterator it;
 	bool ok;
 	ok = false;
 	for( it = currentImageData->animations.begin(); it != currentImageData->animations.end(); it++){
-		if(it->index == (int)anim){
-			cout << "Set animation id: " << anim << endl;
+		if(it->index == anim){
+			//cout << "Set animation id: " << anim << endl;
 			currentAnimation.index = it->index;
 			currentAnimation.numFrames = it->numFrames;
 			currentAnimation.spriteRow = it->spriteRow;
@@ -70,17 +71,18 @@ void GameSprite::setAnimation(AnimationName anim){
 		}
 	}
 	if(!ok){
-		cout << "setting animation that doesnt exist!!" << endl;
+		cout << "setting animation that doesnt exist!! - " << anim << endl;
 	}
 	
 }
 
 void GameSprite::draw(int x, int y, int scale){
 	//ofRect(pos.x, pos.y, 10,10);
-	
+	currentImageData = &(spriteMan->spriteData[spriteDataIndex]);
+
 	
 	currentImage.draw(x,y, currentImageData->dimensions.x * scale  , currentImageData->dimensions.y * scale);
-	
+//	currentImageData->image.draw(x,y, 32  , 32);
 }
 
 void GameSprite::setCurrentFrame(int frame){
@@ -112,7 +114,7 @@ void GameSprite::setCurrentFrame(int frame){
 			}
 		}
 		currentImage.setFromPixels(newPix, width,height, OF_IMAGE_COLOR_ALPHA, true);
-		
+		lastFrame = currentFrame;
 		
 		
 		delete[] newPix;
@@ -140,7 +142,7 @@ void GameSprite::think(){
 			
 		}
 	} else {
-		setCurrentFrame(currentFrame);
+		setCurrentFrame(0);
 	}
 	
 	

@@ -28,40 +28,7 @@ GameMap::GameMap(SpriteManager* spriteMan, int width, int height){
 	mapHeight = height;
 	
 	BLOCKSIZE = 32.0f;
-	blockSprite[0]= new GameSprite(spriteManager);
-	blockSprite[0]->loadData("block");
-	blockSprite[0]->setAnimation(ANIM_WALK);
-	blockSprite[0]->setCurrentFrame(0);
-	blockSprite[0]->collided = false;
-	blockSprite[0]->think();
-
-	blockSprite[1]= new GameSprite(spriteManager);
-	blockSprite[1]->loadData("grassTiles");
-	blockSprite[1]->setAnimation(TILE_MIDDLE);
-	blockSprite[1]->collided = false;
-	
-	
-	blockSprite[2] = new GameSprite(spriteManager);
-	blockSprite[2]->empty = true;
-	
-	int ct = 0;
-	for(int x = 0; x < width; x++){
-		for(int y = 0; y < height; y++){
-			if(x % 3){
-				mapData.push_back( *blockSprite[2]);
-			} else {
-				if(ofRandom(0,1) > 0.5f){
-					mapData.push_back(	*blockSprite[0]);
-				} else {
-					ct++;
-					//blockSprite[1]->setAnimation((AnimationName)(6 + ct % 6));
-					mapData.push_back(	*blockSprite[2]);
-				}
-			}
-			
-		}
-	}
-	
+		
 	
 }
 
@@ -91,11 +58,13 @@ void GameMap::drawMap(Camera* cam){
 					m->think();
 					//m->pos = ofPoint(xp * 32, yp * 32);
 					if(m->collided){
-						ofSetColor(255, 0, 0);
+						//ofSetColor(255, 0, 0);
 					} else {
-						ofSetColor(255, 255, 255);
+						//ofSetColor(255, 255, 255);
 					}
 					m->draw(xp * BLOCKSIZE - (xShift),yp * BLOCKSIZE - (yShift),1);
+
+				} else {
 				}
 			} 
 			
@@ -127,9 +96,10 @@ bool GameMap::checkCollision(GameObject* subject){
 			if( x < mapWidth && x > 0 && y < mapHeight && y  > 0){
 				//these are tiles we are likely to collide with
 				GameSprite* b = &mapData[x + y * mapWidth];
-				if(b->empty != true ){
+				if(b->empty == false ){
 					collisions = COL_NONE;
 					b->collided = true;
+					b->setCurrentFrame(0);
 					//do a smooth pixel collision test.
 					//return the hit position
 					//if were falling then stop us
@@ -192,17 +162,102 @@ bool GameMap::checkCollision(GameObject* subject){
 
 void GameMap::loadFromFile(string file){
 	
-	ifstream inStream("level.csv");
-	string line;
-	if(inStream.is_open()){
-		while(inStream.good()){
-			getline(inStream, line);
-			cout << line << endl;
-		}
-		inStream.close();
+	tmxMap = new Tmx::Map();
+	tmxMap->ParseFile(ofToDataPath("test.tmx"));
+	cout << "====laoding tmx map =====" << endl;
+	if (tmxMap->HasError()) {
+		printf("error code: %d\n", tmxMap->GetErrorCode());
+		printf("error text: %s\n", tmxMap->GetErrorText().c_str());
+	} else {
+		cout << "LOADED MAP" << endl;
+	}
+	// Iterate through the tilesets.
+	for (int i = 0; i < tmxMap->GetNumTilesets(); ++i) {
+		printf("                                    \n");
+		printf("====================================\n");
+		printf("Tileset : %02d\n", i);
+		printf("====================================\n");
+		
+		// Get a tileset.
+		const Tmx::Tileset *tileset = tmxMap->GetTileset(i);
+		
+		// Print tileset information.
+		printf("Name: %s\n", tileset->GetName().c_str());
+		// Get a tile from the tileset.
+			
+	
+			
+	
 	}
 	
+	// Iterate through ttmxMap->he layers.
+	for (int i = 0; i < tmxMap->GetNumLayers(); ++i) {
+		mapWidth =  tmxMap->GetLayer(i)->GetWidth() ;
+		mapHeight =  tmxMap->GetLayer(i)->GetHeight() ;
 
+		printf("                                    \n");
+		printf("====================================\n");
+		printf("Layer : %02d/%s \n", i, tmxMap->GetLayer(i)->GetName().c_str());
+		printf("width : %02d \n", mapWidth);
+		printf("height : %02d \n", mapHeight);
+		printf("====================================\n");
+       		
+		// Get a layer.
+		const Tmx::Layer *layer = tmxMap->GetLayer(i);
+		
+		for (int y = 0; y < mapHeight; ++y) {
+			for (int x = 0; x < mapWidth; ++x) {
+
+				// Get a tile global id.
+				//printf("%03d ", layer->GetTileGid(y, x));
+				// Find a tileset for that id.
+				const Tmx::Tileset *tileset = tmxMap->FindTileset(layer->GetTileGid(x,y));
+				if(tileset != 0){
+					int firstGid = tileset->GetFirstGid();
+					//convert the tile gid to an animation enum
+					
+					int anim = layer->GetTileGid(x,y) - firstGid;
+					if(anim >6) {
+						cout << "!!!!!!" << endl;
+						cout << x <<":" << y <<endl;
+						cout << anim << endl;
+					}
+					//cout << anim;
+					
+					 GameSprite* gs = new GameSprite(spriteManager);
+					 //get the xml block file name from the image source name
+					 string imgName = tileset->GetImage()->GetSource();
+					 int pos = imgName.find(".");
+					 imgName.replace(pos, 4, "");
+										
+					 gs->loadData(imgName);
+					 gs->collided = false;
+					gs->empty = false;
+					gs->setAnimation(anim);
+					
+					gs->setCurrentFrame(0);
+					cout << anim;
+					
+					 mapData.push_back(*gs);
+					 delete gs;
+				} else {
+					GameSprite* gs = new GameSprite(spriteManager);
+					gs->empty=true;
+					gs->collided = false;
+					mapData.push_back(*gs);
+					delete gs;
+					cout << " ";
+				}
+				
+			}
+			cout << endl;
+		}
+	}
+	
+	
+	
+	delete tmxMap;
+	
 }
 
 //returns array indices of mapblocks in the map for a given area

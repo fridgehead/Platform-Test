@@ -18,15 +18,13 @@ enum AnimationName {
 	ANIM_DEAD = 3,
 	ANIM_INJURED = 4,
 	ANIM_JUMP = 5,
-	TILE_TOP = 6,
-	TILE_BOTTOM = 7,
-	TILE_TOP_RIGHT = 8,
+	TILE_MIDDLE = 6,
+	TILE_TOP = 7,
+	TILE_BOTTOM = 8,
 	TILE_TOP_LEFT = 9,
-	TILE_BOTTOM_LEFT = 10,
+	TILE_TOP_RIGHT = 10,
 	TILE_BOTTOM_RIGHT = 11,
-	TILE_MIDDLE = 12,
-	
-	
+	TILE_BOTTOM_LEFT = 12	
 };
 
 
@@ -41,7 +39,7 @@ public:
 	void think();
 	void draw(int x, int y, int scale);
 	void loadData(string tag);
-	void setAnimation(AnimationName anim);
+	void setAnimation(int anim);
 	
 	ofPoint pos;
 	bool mirror;
@@ -49,11 +47,12 @@ public:
 	SpriteManager* spriteMan;
 	bool collided;
 	void setCurrentFrame(int frame); //uses current anim;
-	
+	Animation currentAnimation;
+	int currentFrame, lastFrame;
+
 private:
 	
-	int currentFrame, lastFrame;
-	Animation currentAnimation;
+	
 	ImageData* currentImageData;
 
 	ofImage currentImage;

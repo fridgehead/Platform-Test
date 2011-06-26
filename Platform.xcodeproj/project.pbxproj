@@ -7,6 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		340D8C1B13B7467D0033B071 /* base64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340D8BE113B7467D0033B071 /* base64.cpp */; };
+		340D8C2013B7467D0033B071 /* TmxImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340D8BEB13B7467D0033B071 /* TmxImage.cpp */; };
+		340D8C2113B7467D0033B071 /* TmxLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340D8BED13B7467D0033B071 /* TmxLayer.cpp */; };
+		340D8C2213B7467D0033B071 /* TmxMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340D8BEF13B7467D0033B071 /* TmxMap.cpp */; };
+		340D8C2313B7467D0033B071 /* TmxObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340D8BF213B7467D0033B071 /* TmxObject.cpp */; };
+		340D8C2413B7467D0033B071 /* TmxObjectGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340D8BF413B7467D0033B071 /* TmxObjectGroup.cpp */; };
+		340D8C2513B7467D0033B071 /* TmxPropertySet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340D8BF713B7467D0033B071 /* TmxPropertySet.cpp */; };
+		340D8C2613B7467D0033B071 /* TmxTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340D8BF913B7467D0033B071 /* TmxTile.cpp */; };
+		340D8C2713B7467D0033B071 /* TmxTileset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340D8BFB13B7467D0033B071 /* TmxTileset.cpp */; };
+		340D8C2813B7467D0033B071 /* TmxUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340D8BFD13B7467D0033B071 /* TmxUtil.cpp */; };
+		340D8C2913B7467D0033B071 /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = 340D8C0013B7467D0033B071 /* adler32.c */; };
+		340D8C2A13B7467D0033B071 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = 340D8C0113B7467D0033B071 /* compress.c */; };
+		340D8C2B13B7467D0033B071 /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = 340D8C0213B7467D0033B071 /* crc32.c */; };
+		340D8C2C13B7467D0033B071 /* deflate.c in Sources */ = {isa = PBXBuildFile; fileRef = 340D8C0413B7467D0033B071 /* deflate.c */; };
+		340D8C2D13B7467D0033B071 /* gzclose.c in Sources */ = {isa = PBXBuildFile; fileRef = 340D8C0613B7467D0033B071 /* gzclose.c */; };
+		340D8C2E13B7467D0033B071 /* gzlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 340D8C0813B7467D0033B071 /* gzlib.c */; };
+		340D8C2F13B7467D0033B071 /* gzread.c in Sources */ = {isa = PBXBuildFile; fileRef = 340D8C0913B7467D0033B071 /* gzread.c */; };
+		340D8C3013B7467D0033B071 /* gzwrite.c in Sources */ = {isa = PBXBuildFile; fileRef = 340D8C0A13B7467D0033B071 /* gzwrite.c */; };
+		340D8C3113B7467D0033B071 /* infback.c in Sources */ = {isa = PBXBuildFile; fileRef = 340D8C0B13B7467D0033B071 /* infback.c */; };
+		340D8C3213B7467D0033B071 /* inffast.c in Sources */ = {isa = PBXBuildFile; fileRef = 340D8C0C13B7467D0033B071 /* inffast.c */; };
+		340D8C3313B7467D0033B071 /* inflate.c in Sources */ = {isa = PBXBuildFile; fileRef = 340D8C0F13B7467D0033B071 /* inflate.c */; };
+		340D8C3413B7467D0033B071 /* inftrees.c in Sources */ = {isa = PBXBuildFile; fileRef = 340D8C1113B7467D0033B071 /* inftrees.c */; };
+		340D8C3613B7467D0033B071 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = 340D8C1413B7467D0033B071 /* trees.c */; };
+		340D8C3713B7467D0033B071 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = 340D8C1613B7467D0033B071 /* uncompr.c */; };
+		340D8C3813B7467D0033B071 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 340D8C1913B7467D0033B071 /* zutil.c */; };
 		348FA8B713B360A2005381D3 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8B613B360A2005381D3 /* Map.cpp */; };
 		34AC2DB413B3DABA00B92DC7 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34AC2DB313B3DABA00B92DC7 /* Camera.cpp */; };
 		34AC2F8413B3F3CA00B92DC7 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34AC2F8313B3F3CA00B92DC7 /* GameObject.cpp */; };
@@ -87,6 +112,55 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		340D8BE113B7467D0033B071 /* base64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = base64.cpp; path = ../../addons/TmxParser/base64/base64.cpp; sourceTree = SOURCE_ROOT; };
+		340D8BE213B7467D0033B071 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = base64.h; path = ../../addons/TmxParser/base64/base64.h; sourceTree = SOURCE_ROOT; };
+		340D8BEA13B7467D0033B071 /* Tmx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tmx.h; path = ../../addons/TmxParser/Tmx.h; sourceTree = SOURCE_ROOT; };
+		340D8BEB13B7467D0033B071 /* TmxImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TmxImage.cpp; path = ../../addons/TmxParser/TmxImage.cpp; sourceTree = SOURCE_ROOT; };
+		340D8BEC13B7467D0033B071 /* TmxImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TmxImage.h; path = ../../addons/TmxParser/TmxImage.h; sourceTree = SOURCE_ROOT; };
+		340D8BED13B7467D0033B071 /* TmxLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TmxLayer.cpp; path = ../../addons/TmxParser/TmxLayer.cpp; sourceTree = SOURCE_ROOT; };
+		340D8BEE13B7467D0033B071 /* TmxLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TmxLayer.h; path = ../../addons/TmxParser/TmxLayer.h; sourceTree = SOURCE_ROOT; };
+		340D8BEF13B7467D0033B071 /* TmxMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TmxMap.cpp; path = ../../addons/TmxParser/TmxMap.cpp; sourceTree = SOURCE_ROOT; };
+		340D8BF013B7467D0033B071 /* TmxMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TmxMap.h; path = ../../addons/TmxParser/TmxMap.h; sourceTree = SOURCE_ROOT; };
+		340D8BF113B7467D0033B071 /* TmxMapTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TmxMapTile.h; path = ../../addons/TmxParser/TmxMapTile.h; sourceTree = SOURCE_ROOT; };
+		340D8BF213B7467D0033B071 /* TmxObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TmxObject.cpp; path = ../../addons/TmxParser/TmxObject.cpp; sourceTree = SOURCE_ROOT; };
+		340D8BF313B7467D0033B071 /* TmxObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TmxObject.h; path = ../../addons/TmxParser/TmxObject.h; sourceTree = SOURCE_ROOT; };
+		340D8BF413B7467D0033B071 /* TmxObjectGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TmxObjectGroup.cpp; path = ../../addons/TmxParser/TmxObjectGroup.cpp; sourceTree = SOURCE_ROOT; };
+		340D8BF513B7467D0033B071 /* TmxObjectGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TmxObjectGroup.h; path = ../../addons/TmxParser/TmxObjectGroup.h; sourceTree = SOURCE_ROOT; };
+		340D8BF613B7467D0033B071 /* TmxParser.vcproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TmxParser.vcproj; path = ../../addons/TmxParser/TmxParser.vcproj; sourceTree = SOURCE_ROOT; };
+		340D8BF713B7467D0033B071 /* TmxPropertySet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TmxPropertySet.cpp; path = ../../addons/TmxParser/TmxPropertySet.cpp; sourceTree = SOURCE_ROOT; };
+		340D8BF813B7467D0033B071 /* TmxPropertySet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TmxPropertySet.h; path = ../../addons/TmxParser/TmxPropertySet.h; sourceTree = SOURCE_ROOT; };
+		340D8BF913B7467D0033B071 /* TmxTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TmxTile.cpp; path = ../../addons/TmxParser/TmxTile.cpp; sourceTree = SOURCE_ROOT; };
+		340D8BFA13B7467D0033B071 /* TmxTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TmxTile.h; path = ../../addons/TmxParser/TmxTile.h; sourceTree = SOURCE_ROOT; };
+		340D8BFB13B7467D0033B071 /* TmxTileset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TmxTileset.cpp; path = ../../addons/TmxParser/TmxTileset.cpp; sourceTree = SOURCE_ROOT; };
+		340D8BFC13B7467D0033B071 /* TmxTileset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TmxTileset.h; path = ../../addons/TmxParser/TmxTileset.h; sourceTree = SOURCE_ROOT; };
+		340D8BFD13B7467D0033B071 /* TmxUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TmxUtil.cpp; path = ../../addons/TmxParser/TmxUtil.cpp; sourceTree = SOURCE_ROOT; };
+		340D8BFE13B7467D0033B071 /* TmxUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TmxUtil.h; path = ../../addons/TmxParser/TmxUtil.h; sourceTree = SOURCE_ROOT; };
+		340D8C0013B7467D0033B071 /* adler32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = adler32.c; path = ../../addons/TmxParser/zlib/adler32.c; sourceTree = SOURCE_ROOT; };
+		340D8C0113B7467D0033B071 /* compress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = compress.c; path = ../../addons/TmxParser/zlib/compress.c; sourceTree = SOURCE_ROOT; };
+		340D8C0213B7467D0033B071 /* crc32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = crc32.c; path = ../../addons/TmxParser/zlib/crc32.c; sourceTree = SOURCE_ROOT; };
+		340D8C0313B7467D0033B071 /* crc32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = crc32.h; path = ../../addons/TmxParser/zlib/crc32.h; sourceTree = SOURCE_ROOT; };
+		340D8C0413B7467D0033B071 /* deflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = deflate.c; path = ../../addons/TmxParser/zlib/deflate.c; sourceTree = SOURCE_ROOT; };
+		340D8C0513B7467D0033B071 /* deflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = deflate.h; path = ../../addons/TmxParser/zlib/deflate.h; sourceTree = SOURCE_ROOT; };
+		340D8C0613B7467D0033B071 /* gzclose.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gzclose.c; path = ../../addons/TmxParser/zlib/gzclose.c; sourceTree = SOURCE_ROOT; };
+		340D8C0713B7467D0033B071 /* gzguts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gzguts.h; path = ../../addons/TmxParser/zlib/gzguts.h; sourceTree = SOURCE_ROOT; };
+		340D8C0813B7467D0033B071 /* gzlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gzlib.c; path = ../../addons/TmxParser/zlib/gzlib.c; sourceTree = SOURCE_ROOT; };
+		340D8C0913B7467D0033B071 /* gzread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gzread.c; path = ../../addons/TmxParser/zlib/gzread.c; sourceTree = SOURCE_ROOT; };
+		340D8C0A13B7467D0033B071 /* gzwrite.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gzwrite.c; path = ../../addons/TmxParser/zlib/gzwrite.c; sourceTree = SOURCE_ROOT; };
+		340D8C0B13B7467D0033B071 /* infback.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = infback.c; path = ../../addons/TmxParser/zlib/infback.c; sourceTree = SOURCE_ROOT; };
+		340D8C0C13B7467D0033B071 /* inffast.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = inffast.c; path = ../../addons/TmxParser/zlib/inffast.c; sourceTree = SOURCE_ROOT; };
+		340D8C0D13B7467D0033B071 /* inffast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = inffast.h; path = ../../addons/TmxParser/zlib/inffast.h; sourceTree = SOURCE_ROOT; };
+		340D8C0E13B7467D0033B071 /* inffixed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = inffixed.h; path = ../../addons/TmxParser/zlib/inffixed.h; sourceTree = SOURCE_ROOT; };
+		340D8C0F13B7467D0033B071 /* inflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = inflate.c; path = ../../addons/TmxParser/zlib/inflate.c; sourceTree = SOURCE_ROOT; };
+		340D8C1013B7467D0033B071 /* inflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = inflate.h; path = ../../addons/TmxParser/zlib/inflate.h; sourceTree = SOURCE_ROOT; };
+		340D8C1113B7467D0033B071 /* inftrees.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = inftrees.c; path = ../../addons/TmxParser/zlib/inftrees.c; sourceTree = SOURCE_ROOT; };
+		340D8C1213B7467D0033B071 /* inftrees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = inftrees.h; path = ../../addons/TmxParser/zlib/inftrees.h; sourceTree = SOURCE_ROOT; };
+		340D8C1413B7467D0033B071 /* trees.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = trees.c; path = ../../addons/TmxParser/zlib/trees.c; sourceTree = SOURCE_ROOT; };
+		340D8C1513B7467D0033B071 /* trees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = trees.h; path = ../../addons/TmxParser/zlib/trees.h; sourceTree = SOURCE_ROOT; };
+		340D8C1613B7467D0033B071 /* uncompr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = uncompr.c; path = ../../addons/TmxParser/zlib/uncompr.c; sourceTree = SOURCE_ROOT; };
+		340D8C1713B7467D0033B071 /* zconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zconf.h; path = ../../addons/TmxParser/zlib/zconf.h; sourceTree = SOURCE_ROOT; };
+		340D8C1813B7467D0033B071 /* zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zlib.h; path = ../../addons/TmxParser/zlib/zlib.h; sourceTree = SOURCE_ROOT; };
+		340D8C1913B7467D0033B071 /* zutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zutil.c; path = ../../addons/TmxParser/zlib/zutil.c; sourceTree = SOURCE_ROOT; };
+		340D8C1A13B7467D0033B071 /* zutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zutil.h; path = ../../addons/TmxParser/zlib/zutil.h; sourceTree = SOURCE_ROOT; };
 		348FA8B513B360A2005381D3 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
 		348FA8B613B360A2005381D3 /* Map.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
 		34AC2DB213B3DABA00B92DC7 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
@@ -180,6 +254,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		340D8BDF13B7467D0033B071 /* TmxParser */ = {
+			isa = PBXGroup;
+			children = (
+				340D8BE013B7467D0033B071 /* base64 */,
+				340D8BEA13B7467D0033B071 /* Tmx.h */,
+				340D8BEB13B7467D0033B071 /* TmxImage.cpp */,
+				340D8BEC13B7467D0033B071 /* TmxImage.h */,
+				340D8BED13B7467D0033B071 /* TmxLayer.cpp */,
+				340D8BEE13B7467D0033B071 /* TmxLayer.h */,
+				340D8BEF13B7467D0033B071 /* TmxMap.cpp */,
+				340D8BF013B7467D0033B071 /* TmxMap.h */,
+				340D8BF113B7467D0033B071 /* TmxMapTile.h */,
+				340D8BF213B7467D0033B071 /* TmxObject.cpp */,
+				340D8BF313B7467D0033B071 /* TmxObject.h */,
+				340D8BF413B7467D0033B071 /* TmxObjectGroup.cpp */,
+				340D8BF513B7467D0033B071 /* TmxObjectGroup.h */,
+				340D8BF613B7467D0033B071 /* TmxParser.vcproj */,
+				340D8BF713B7467D0033B071 /* TmxPropertySet.cpp */,
+				340D8BF813B7467D0033B071 /* TmxPropertySet.h */,
+				340D8BF913B7467D0033B071 /* TmxTile.cpp */,
+				340D8BFA13B7467D0033B071 /* TmxTile.h */,
+				340D8BFB13B7467D0033B071 /* TmxTileset.cpp */,
+				340D8BFC13B7467D0033B071 /* TmxTileset.h */,
+				340D8BFD13B7467D0033B071 /* TmxUtil.cpp */,
+				340D8BFE13B7467D0033B071 /* TmxUtil.h */,
+				340D8BFF13B7467D0033B071 /* zlib */,
+			);
+			name = TmxParser;
+			path = ../../addons/TmxParser;
+			sourceTree = SOURCE_ROOT;
+		};
+		340D8BE013B7467D0033B071 /* base64 */ = {
+			isa = PBXGroup;
+			children = (
+				340D8BE113B7467D0033B071 /* base64.cpp */,
+				340D8BE213B7467D0033B071 /* base64.h */,
+			);
+			name = base64;
+			path = ../../addons/TmxParser/base64;
+			sourceTree = SOURCE_ROOT;
+		};
+		340D8BFF13B7467D0033B071 /* zlib */ = {
+			isa = PBXGroup;
+			children = (
+				340D8C0013B7467D0033B071 /* adler32.c */,
+				340D8C0113B7467D0033B071 /* compress.c */,
+				340D8C0213B7467D0033B071 /* crc32.c */,
+				340D8C0313B7467D0033B071 /* crc32.h */,
+				340D8C0413B7467D0033B071 /* deflate.c */,
+				340D8C0513B7467D0033B071 /* deflate.h */,
+				340D8C0613B7467D0033B071 /* gzclose.c */,
+				340D8C0713B7467D0033B071 /* gzguts.h */,
+				340D8C0813B7467D0033B071 /* gzlib.c */,
+				340D8C0913B7467D0033B071 /* gzread.c */,
+				340D8C0A13B7467D0033B071 /* gzwrite.c */,
+				340D8C0B13B7467D0033B071 /* infback.c */,
+				340D8C0C13B7467D0033B071 /* inffast.c */,
+				340D8C0D13B7467D0033B071 /* inffast.h */,
+				340D8C0E13B7467D0033B071 /* inffixed.h */,
+				340D8C0F13B7467D0033B071 /* inflate.c */,
+				340D8C1013B7467D0033B071 /* inflate.h */,
+				340D8C1113B7467D0033B071 /* inftrees.c */,
+				340D8C1213B7467D0033B071 /* inftrees.h */,
+				340D8C1413B7467D0033B071 /* trees.c */,
+				340D8C1513B7467D0033B071 /* trees.h */,
+				340D8C1613B7467D0033B071 /* uncompr.c */,
+				340D8C1713B7467D0033B071 /* zconf.h */,
+				340D8C1813B7467D0033B071 /* zlib.h */,
+				340D8C1913B7467D0033B071 /* zutil.c */,
+				340D8C1A13B7467D0033B071 /* zutil.h */,
+			);
+			name = zlib;
+			path = ../../addons/TmxParser/zlib;
+			sourceTree = SOURCE_ROOT;
+		};
 		34BD758A13B2836600596DCB /* ofxXmlSettings */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +365,7 @@
 		BB4B018C10F6955C006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				340D8BDF13B7467D0033B071 /* TmxParser */,
 				34BD758A13B2836600596DCB /* ofxXmlSettings */,
 			);
 			name = addons;
@@ -602,6 +752,31 @@
 				348FA8B713B360A2005381D3 /* Map.cpp in Sources */,
 				34AC2DB413B3DABA00B92DC7 /* Camera.cpp in Sources */,
 				34AC2F8413B3F3CA00B92DC7 /* GameObject.cpp in Sources */,
+				340D8C1B13B7467D0033B071 /* base64.cpp in Sources */,
+				340D8C2013B7467D0033B071 /* TmxImage.cpp in Sources */,
+				340D8C2113B7467D0033B071 /* TmxLayer.cpp in Sources */,
+				340D8C2213B7467D0033B071 /* TmxMap.cpp in Sources */,
+				340D8C2313B7467D0033B071 /* TmxObject.cpp in Sources */,
+				340D8C2413B7467D0033B071 /* TmxObjectGroup.cpp in Sources */,
+				340D8C2513B7467D0033B071 /* TmxPropertySet.cpp in Sources */,
+				340D8C2613B7467D0033B071 /* TmxTile.cpp in Sources */,
+				340D8C2713B7467D0033B071 /* TmxTileset.cpp in Sources */,
+				340D8C2813B7467D0033B071 /* TmxUtil.cpp in Sources */,
+				340D8C2913B7467D0033B071 /* adler32.c in Sources */,
+				340D8C2A13B7467D0033B071 /* compress.c in Sources */,
+				340D8C2B13B7467D0033B071 /* crc32.c in Sources */,
+				340D8C2C13B7467D0033B071 /* deflate.c in Sources */,
+				340D8C2D13B7467D0033B071 /* gzclose.c in Sources */,
+				340D8C2E13B7467D0033B071 /* gzlib.c in Sources */,
+				340D8C2F13B7467D0033B071 /* gzread.c in Sources */,
+				340D8C3013B7467D0033B071 /* gzwrite.c in Sources */,
+				340D8C3113B7467D0033B071 /* infback.c in Sources */,
+				340D8C3213B7467D0033B071 /* inffast.c in Sources */,
+				340D8C3313B7467D0033B071 /* inflate.c in Sources */,
+				340D8C3413B7467D0033B071 /* inftrees.c in Sources */,
+				340D8C3613B7467D0033B071 /* trees.c in Sources */,
+				340D8C3713B7467D0033B071 /* uncompr.c in Sources */,
+				340D8C3813B7467D0033B071 /* zutil.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

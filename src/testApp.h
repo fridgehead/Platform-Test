@@ -9,6 +9,8 @@
 #include "Camera.h"
 #include "GameObject.h"
 
+//#define DEBUG
+
 class testApp : public ofBaseApp{
 
 	public:
@@ -35,6 +37,9 @@ class testApp : public ofBaseApp{
 	AnimationName t;
 	int playerX,playerY;
 	int dir;
+	
+	
+	bool ready;
 };
 
 #endif
