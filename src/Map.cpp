@@ -10,6 +10,7 @@
 
 #include "Map.h"
 #include "Camera.h"
+#include <iostream>
 
 
 #define	COL_NONE 0
@@ -19,12 +20,14 @@
 #define	COL_LEFT  4
 
 
+
+
 GameMap::GameMap(SpriteManager* spriteMan, int width, int height){
 	spriteManager = spriteMan;
 	mapWidth = width;
 	mapHeight = height;
 	
-
+	BLOCKSIZE = 32.0f;
 	blockSprite[0]= new GameSprite(spriteManager);
 	blockSprite[0]->loadData("block");
 	blockSprite[0]->setAnimation(ANIM_WALK);
@@ -69,14 +72,14 @@ GameMap::~GameMap(){
 
 void GameMap::drawMap(Camera* cam){
 	//work out whats in view
-	int xCount = floor(cam->size.x / 64.0f) + 1;
-	int yCount = floor(cam->size.y / 64.0f)  +1;
+	int xCount = floor(cam->size.x / BLOCKSIZE) + 1;
+	int yCount = floor(cam->size.y / BLOCKSIZE) +1;
 	
-	int xMin = floor(cam->worldPosition.x / 64);
-	int yMin = floor(cam->worldPosition.y / 64);
+	int xMin = floor(cam->worldPosition.x / BLOCKSIZE);
+	int yMin = floor(cam->worldPosition.y / BLOCKSIZE);
 	
-	int xShift = ((int)cam->worldPosition.x % 64);// - xMin;
-	int yShift = ((int)cam->worldPosition.y % 64);// - yMin;
+	int xShift = ((int)cam->worldPosition.x % (int)BLOCKSIZE);// - xMin;
+	int yShift = ((int)cam->worldPosition.y % (int)BLOCKSIZE);// - yMin;
 	
 	//cout << xShift << endl;
 	for(int xp = 0; xp < xCount; xp++){
@@ -92,7 +95,7 @@ void GameMap::drawMap(Camera* cam){
 					} else {
 						ofSetColor(255, 255, 255);
 					}
-					m->draw(xp * 64 - (xShift),yp * 64 - (yShift),2);
+					m->draw(xp * BLOCKSIZE - (xShift),yp * BLOCKSIZE - (yShift),1);
 				}
 			} 
 			
@@ -108,10 +111,10 @@ bool GameMap::checkCollision(GameObject* subject){
 	ofPoint subjectBB = subject->boundingBoxSize;
 	
 	//find all tiles in the BB area
-	int xMin = floor((subjectPos.x ) / 64);
-	int yMin = floor((subjectPos.y ) / 64);
-	int xMax = ceil((subjectPos.x + subjectBB.x ) / 64);
-	int yMax = ceil((subjectPos.y + subjectBB.y ) / 64);	
+	int xMin = floor((subjectPos.x ) / BLOCKSIZE);
+	int yMin = floor((subjectPos.y ) / BLOCKSIZE);
+	int xMax = ceil((subjectPos.x + subjectBB.x ) / BLOCKSIZE);
+	int yMax = ceil((subjectPos.y + subjectBB.y ) / BLOCKSIZE);	
 	
 	bool didWeCollide = false;
 	int collisions = COL_NONE;
@@ -132,16 +135,16 @@ bool GameMap::checkCollision(GameObject* subject){
 					//if were falling then stop us
 					
 					
-					//cout << ": player base pos: " << subject->worldPos.y + subjectBB.y  << " -- block pos " << y * 64<< endl;
+					//cout << ": player base pos: " << subject->worldPos.y + subjectBB.y  << " -- block pos " << y * BLOCKSIZE<< endl;
 					
 					//check bottom edge is inside the collided tile
-					if((subjectPos.y + subjectBB.y) > (y * 64 ) && (subjectPos.y + subjectBB.y) <  (y * 64 ) + 64){
+					if((subjectPos.y + subjectBB.y) > (y * BLOCKSIZE ) && (subjectPos.y + subjectBB.y) <  (y * BLOCKSIZE ) + BLOCKSIZE){
 						if( subject->isOnGround == false){
 							//hit the ground
 							
 							onGround = true;
 							subject->speed.y = 0;
-							subject->worldPos.y = ((y * 64 ) - subjectBB.y )  ;
+							subject->worldPos.y = ((y * BLOCKSIZE ) - subjectBB.y )  ;
 							//cout << "set: " << subject->worldPos.y << endl;
 							
 							subject->isJumping = false;
@@ -150,33 +153,31 @@ bool GameMap::checkCollision(GameObject* subject){
 							
 						}  else {
 							subject->speed.y = 0;
-							subject->worldPos.y = ((y * 64 ) - subjectBB.y )  ;
+							subject->worldPos.y = ((y * BLOCKSIZE ) - subjectBB.y )  ;
 							didWeCollide = true;
 							onGround = true;
 							collisions |= COL_BOTTOM;
 						}
 							
-					}
-					//right side of subject, left of block
-					if((subjectPos.x + subjectBB.x) >= (x * 64 ) && (subjectPos.x + subjectBB.x) <=  (x * 64 ) + 64 &&  collisions == COL_NONE){
-						subject->speed.x = 0;
-						subject->worldPos.x = ((x * 64 ) - subjectBB.x ) ;
-						collisions |= COL_LEFT;
-					}
-					//left of object, right of block
-					if((subjectPos.x ) >= (x * 64 ) && (subjectPos.x) <=  (x * 64 ) + 64 && collisions == COL_NONE){
-						subject->speed.x = 0;
-						subject->worldPos.x = ((x * 64 ) + 64 )  ;
-						collisions |= COL_RIGHT;
-					}
-					
-					//top of object, bottom of block
-					if((subjectPos.y ) >= (y * 64 ) && (subjectPos.y) <=  (y * 64 ) + 64 && collisions == COL_NONE){
+					} else if((subjectPos.y ) >= (y * BLOCKSIZE ) && (subjectPos.y) <=  (y * BLOCKSIZE ) + BLOCKSIZE ){
 						subject->speed.y = 0;
-						subject->worldPos.y = ((y * 64 )  + 64)  ;
+						subject->worldPos.y = ((y * BLOCKSIZE )  + BLOCKSIZE)  ;
 						collisions |= COL_TOP;
 					}
 					
+					//right side of subject, left of block
+					if((subjectPos.x + subjectBB.x) >= (x * BLOCKSIZE ) && (subjectPos.x + subjectBB.x) <=  (x * BLOCKSIZE ) + BLOCKSIZE &&  collisions == COL_NONE){
+						subject->speed.x = 0;
+						subject->worldPos.x = ((x * BLOCKSIZE ) - subjectBB.x ) ;
+						collisions |= COL_LEFT;
+					}
+					//left of object, right of block
+					if((subjectPos.x ) >= (x * BLOCKSIZE ) && (subjectPos.x) <=  (x * BLOCKSIZE ) + BLOCKSIZE && collisions == COL_NONE){
+						subject->speed.x = 0;
+						subject->worldPos.x = ((x * BLOCKSIZE ) + BLOCKSIZE )  ;
+						collisions |= COL_RIGHT;
+					}			
+										
 				}
 				
 			}
@@ -190,6 +191,17 @@ bool GameMap::checkCollision(GameObject* subject){
 
 
 void GameMap::loadFromFile(string file){
+	
+	ifstream inStream("level.csv");
+	string line;
+	if(inStream.is_open()){
+		while(inStream.good()){
+			getline(inStream, line);
+			cout << line << endl;
+		}
+		inStream.close();
+	}
+	
 
 }
 

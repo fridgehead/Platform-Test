@@ -39,6 +39,7 @@ public:
 	int mapWidth, mapHeight;
 	
 	GameSprite* blockSprite[3];
+	float BLOCKSIZE;
 	
 private:
 	SpriteManager* spriteManager;
