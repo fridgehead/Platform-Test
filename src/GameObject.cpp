@@ -53,3 +53,10 @@ void Player::think(){
 	
 }
 
+
+void Player::collided(GameObject* subject){
+	cout << "hit something" << endl;
+}
+
+
+

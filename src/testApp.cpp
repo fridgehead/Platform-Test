@@ -26,7 +26,7 @@ void testApp::setup(){
 	dir = 0;
 	ofSetFrameRate(30);
 	
-	testPlayer = new Player(ofPoint(150,550), testSprite);
+	testPlayer = new Player(gameMap->spawnPos, testSprite);
 	testPlayer->speed = ofPoint(0,0);
 	testPlayer->boundingBoxSize = ofPoint(66,108);
 	ready = true;
@@ -54,8 +54,8 @@ void testApp::update(){
 	
 	
 	int cx = testPlayer->worldPos.x - 512;
-	if (cx <0){
-		cx = 0;
+	if (cx <32){
+		cx = 32;
 	} else if (cx > gameMap->mapWidth * 64){
 		cx = gameMap->mapWidth * 64;
 	}
@@ -119,7 +119,9 @@ void testApp::keyPressed(int key){
 			//playerY += 10;
 			break;
 		case 32:
+			
 			if(testPlayer->isJumping == false){
+				testSprite->setAnimation(ANIM_JUMP);
 				testPlayer->speed.y = -30;
 				testPlayer->isJumping = true;
 				testPlayer->isOnGround = false;

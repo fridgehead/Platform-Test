@@ -251,7 +251,36 @@ void GameMap::loadFromFile(string file){
 				
 			}
 			cout << endl;
+			
+			
 		}
+		
+		cout << "LOADING OBJECTS" << endl;
+		//now load game objects
+		const Tmx::ObjectGroup* objGroup = tmxMap->GetObjectGroup(0);
+		if(objGroup != 0){
+			cout << "found object group " << objGroup->GetName() << endl;
+			vector<Tmx::Object*>  objs = objGroup->GetObjects();
+			
+			vector<Tmx::Object*>::iterator it;
+			for(it = objs.begin(); it < objs.end(); it++){
+				Tmx::Object* o = (*it);
+				
+				if(o->GetName() == "Spawn"){
+					cout << "setting spawn" << endl;
+					spawnPos = ofPoint(o->GetX(), o->GetY());
+				}
+				
+				
+				
+				cout << o->GetName() << endl;
+				o = NULL;
+				
+			}
+			
+		}
+		
+		
 	}
 	
 	

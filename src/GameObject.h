@@ -18,6 +18,7 @@ public:
 	GameObject(ofPoint worldPosition, GameSprite* spt);
 	~GameObject();
 	virtual void think() = 0;
+	virtual void collided(GameObject* subject) = 0;
 	ofRectangle getBoundingBox();
 	
 	ofPoint worldPos;			//top left of sprite for now
@@ -36,10 +37,21 @@ public:
 	Player(ofPoint worldPosition, GameSprite* spt);
 	~Player();
 	void think();
+	void collided(GameObject* subject);
 	
 	
 	
 	
 };
+
+
+class CoinBlock : public GameObject{
+public:
+	CoinBlock(ofPoint worldPosition, GameSprite* spt);
+	~CoinBlock();
+	void think();
+	void collided(GameObject* subject);
+};
+
 
 #endif

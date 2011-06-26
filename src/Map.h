@@ -46,6 +46,9 @@ public:
 	
 	Tmx::Map *tmxMap;
 	
+	vector<GameObject> objects;
+	ofPoint spawnPos;
+	
 private:
 	SpriteManager* spriteManager;
 
