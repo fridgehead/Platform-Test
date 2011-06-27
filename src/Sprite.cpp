@@ -104,7 +104,7 @@ void GameSprite::setCurrentFrame(int frame){
 		int ct = 0;
 		
 		//temps for working out the frames bounding box
-		int firstY = -1;
+		int firstY = 10000;
 		int firstX = -1;
 		int lastY = -1;
 		int lastX = -1;
@@ -127,14 +127,14 @@ void GameSprite::setCurrentFrame(int frame){
 					if(firstX < x){
 						firstX = x;
 					}
-					if(firstY < y){
+					if(y < firstY){
 						firstY = y;
 					}
 					
 					if(lastX >x){
 						lastX = x;
 					} 
-					if(lastY > y){
+					if(lastY < y){
 						lastY = y;
 					}
 				}
@@ -142,7 +142,26 @@ void GameSprite::setCurrentFrame(int frame){
 		}
 		currentImage.setFromPixels(newPix, width,height, OF_IMAGE_COLOR_ALPHA, true);
 		lastFrame = currentFrame;
-		boundingBox = ofRectangle(firstX * scale,firstY * scale, abs(lastX - firstX) * scale, abs(lastY - firstY) * scale);
+		int xl = 0;
+		int xw = 0;
+		int yl = 0;
+		int yw = 0;
+		if(lastX < firstX){
+			xl = lastX;
+			xw = firstX - lastX;			
+		} else {
+			xl = firstX;
+			xw = lastX - firstX;			
+		}
+		if(lastY < firstY){
+			yl = lastY;
+			yw = firstY - lastY;			
+		} else {
+			yl = firstY;
+			yw = lastY - firstY;			
+		}
+		
+		boundingBox = ofRectangle(xl * scale ,yl *scale , xw * scale, yw * scale);
 		
 		delete[] newPix;
 	}

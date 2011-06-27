@@ -58,9 +58,9 @@ void GameMap::drawMap(Camera* cam){
 					m->think();
 					//m->pos = ofPoint(xp * 32, yp * 32);
 					if(m->collided){
-						//ofSetColor(255, 0, 0);
+						ofSetColor(255, 0, 0);
 					} else {
-						//ofSetColor(255, 255, 255);
+						ofSetColor(255, 255, 255);
 					}
 					m->draw(xp * BLOCKSIZE - (xShift),yp * BLOCKSIZE - (yShift),0);
 
@@ -76,7 +76,7 @@ void GameMap::drawMap(Camera* cam){
 bool GameMap::checkCollision(GameObject* subject){
 	
 	//check for bb intersections with nearest blocks
-	ofPoint subjectPos = subject->worldPos;
+	ofPoint subjectPos = ofPoint(subject->worldPos.x + subject->getBoundingBox().x, subject->worldPos.y + subject->getBoundingBox().y);
 	ofPoint subjectBB = ofPoint(subject->getBoundingBox().width, subject->getBoundingBox().height);
 	
 	//find all tiles in the BB area
@@ -99,7 +99,7 @@ bool GameMap::checkCollision(GameObject* subject){
 				if(b->empty == false ){
 					collisions = COL_NONE;
 					b->collided = true;
-					b->setCurrentFrame(0);
+					//b->setCurrentFrame(0);
 					//do a smooth pixel collision test.
 					//return the hit position
 					//if were falling then stop us
@@ -114,7 +114,7 @@ bool GameMap::checkCollision(GameObject* subject){
 							
 							onGround = true;
 							subject->speed.y = 0;
-							subject->worldPos.y = ((y * BLOCKSIZE ) - subjectBB.y )  ;
+							subject->worldPos.y = ((y * BLOCKSIZE ) - subjectBB.y ) - subject->getBoundingBox().y  ;
 							//cout << "set: " << subject->worldPos.y << endl;
 							
 							subject->isJumping = false;
@@ -122,8 +122,9 @@ bool GameMap::checkCollision(GameObject* subject){
 							collisions |= COL_BOTTOM;
 							
 						}  else {
+							cout << "lol ";
 							subject->speed.y = 0;
-							subject->worldPos.y = ((y * BLOCKSIZE ) - subjectBB.y )  ;
+							subject->worldPos.y = ((y * BLOCKSIZE ) - subjectBB.y ) - subject->getBoundingBox().y;
 							didWeCollide = true;
 							onGround = true;
 							collisions |= COL_BOTTOM;
@@ -133,16 +134,11 @@ bool GameMap::checkCollision(GameObject* subject){
 						subject->speed.y = 0;
 						subject->worldPos.y = ((y * BLOCKSIZE )  + BLOCKSIZE)  ;
 						collisions |= COL_TOP;
-					}
-					
-					//right side of subject, left of block
-					if((subjectPos.x + subjectBB.x) >= (x * BLOCKSIZE ) && (subjectPos.x + subjectBB.x) <=  (x * BLOCKSIZE ) + BLOCKSIZE &&  collisions == COL_NONE){
+					} else if((subjectPos.x + subjectBB.x) >= (x * BLOCKSIZE ) && (subjectPos.x + subjectBB.x) <=  (x * BLOCKSIZE ) + BLOCKSIZE &&  collisions == COL_NONE){
 						subject->speed.x = 0;
 						subject->worldPos.x = ((x * BLOCKSIZE ) - subjectBB.x ) ;
 						collisions |= COL_LEFT;
-					}
-					//left of object, right of block
-					if((subjectPos.x ) >= (x * BLOCKSIZE ) && (subjectPos.x) <=  (x * BLOCKSIZE ) + BLOCKSIZE && collisions == COL_NONE){
+					}else if((subjectPos.x ) >= (x * BLOCKSIZE ) && (subjectPos.x) <=  (x * BLOCKSIZE ) + BLOCKSIZE && collisions == COL_NONE){
 						subject->speed.x = 0;
 						subject->worldPos.x = ((x * BLOCKSIZE ) + BLOCKSIZE )  ;
 						collisions |= COL_RIGHT;
