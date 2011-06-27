@@ -4,30 +4,41 @@
 		<index id = "0"/>
 		<row id = "0"/>
 		<frames length="1" speed = "-1"/>
+        <collisionmask mask="9"/>
 	</anim>
     <anim>
 		<index id = "1"/>
 		<row id = "1"/>
 		<frames length="1" speed = "-1"/>
+        <collisionmask mask="3"/>
+
 	</anim>
     <anim>
 		<index id = "2"/>
 		<row id = "2"/>
 		<frames length="1" speed = "-1"/>
+        <collisionmask mask="8"/>
+
 	</anim>
     <anim>
 		<index id = "3"/>
 		<row id = "3"/>
 		<frames length="1" speed = "-1"/>
+        <collisionmask mask="2"/>
+
 	</anim>
     <anim>
 		<index id = "4"/>
 		<row id = "4"/>
 		<frames length="1" speed = "-1"/>
+        <collisionmask mask="8"/>
+
 	</anim>
     <anim>
 		<index id = "5"/>
 		<row id = "5"/>
 		<frames length="1" speed = "-1"/>
+        <collisionmask mask="2"/>
+
 	</anim>
 </animations>

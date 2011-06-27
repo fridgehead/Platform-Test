@@ -99,7 +99,7 @@ void testApp::draw(){
 	if(spriteScreenPos.x != -1 && spriteScreenPos.y != -1){
 		testSprite->draw(spriteScreenPos.x, spriteScreenPos.y,0);
 		ofNoFill();
-		ofRect(spriteScreenPos.x + testPlayer->getBoundingBox().x, spriteScreenPos.y + testPlayer->getBoundingBox().y , testPlayer->getBoundingBox().width, testPlayer->getBoundingBox().height);
+		//ofRect(spriteScreenPos.x + testPlayer->getBoundingBox().x, spriteScreenPos.y + testPlayer->getBoundingBox().y , testPlayer->getBoundingBox().width, testPlayer->getBoundingBox().height);
 	}
 
 	watermark.draw(700, 700);

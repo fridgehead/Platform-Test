@@ -18,6 +18,7 @@ struct Animation{
 	int index;		//animation name
 	int spriteRow;	//row in sprite sheet
 	int animSpeed;
+	int collisionMask;
 };
 
 struct ImageData {

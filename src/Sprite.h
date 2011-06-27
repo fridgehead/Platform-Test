@@ -51,6 +51,7 @@ public:
 	int currentFrame, lastFrame;
 	float scale;
 	ofRectangle boundingBox;
+	int collisionMask;
 
 private:
 	

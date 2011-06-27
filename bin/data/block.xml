@@ -4,5 +4,7 @@
 		<index id = "0"/>
 		<row id = "0"/>
 		<frames length="2" speed="1000"/>
+        <collisionmask mask="15"/>
+
 	</anim>
 </animations>

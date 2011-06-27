@@ -63,6 +63,7 @@ int SpriteManager::loadDataFile(string tag){
 	int rowId;
 	int frameLength;
 	int frameSpeed;
+	int collisionMask;
 	xml.pushTag("animations", 0);
 	for(int an = 0; an < numAnims; an++){
 		xml.pushTag("anim", an);
@@ -70,12 +71,13 @@ int SpriteManager::loadDataFile(string tag){
 		rowId = xml.getAttribute("row", "id", 0.0, 0);
 		frameLength = xml.getAttribute("frames", "length", 0.0, 0);	
 		frameSpeed = xml.getAttribute("frames", "speed", 10.0, 0);	
-
+		collisionMask = xml.getAttribute("collisionmask", "mask", 0, 0);	
 		Animation a;
 		a.numFrames = frameLength;
 		a.index = animId;
 		a.spriteRow = rowId;
 		a.animSpeed = frameSpeed;
+		a.collisionMask = collisionMask;
 		temp.animations.push_back(a);
 		
 		

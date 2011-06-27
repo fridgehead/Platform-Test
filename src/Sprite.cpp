@@ -21,6 +21,7 @@ GameSprite::GameSprite(SpriteManager* spriteman){
 	lastFrame = -1;
 	boundingBox = ofRectangle(0,0,1,1);
 	scale = 2.0f;
+
 	
 }
 
@@ -59,6 +60,7 @@ void GameSprite::setAnimation(int anim){
 			currentAnimation.numFrames = it->numFrames;
 			currentAnimation.spriteRow = it->spriteRow;
 			currentAnimation.animSpeed = it->animSpeed;
+			currentAnimation.collisionMask = it->collisionMask;
 			//cout << "got animation index: " << currentAnimation.numFrames << endl;
 			currentFrame = 0;
 			lastFrameTime = ofGetElapsedTimeMillis() - it->animSpeed - 10;

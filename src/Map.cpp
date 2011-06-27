@@ -58,12 +58,12 @@ void GameMap::drawMap(Camera* cam){
 					m->think();
 					//m->pos = ofPoint(xp * 32, yp * 32);
 					if(m->collided){
-						ofSetColor(255, 0, 0);
+			//			ofSetColor(255, 0, 0);
 					} else {
-						ofSetColor(255, 255, 255);
+			//			ofSetColor(255, 255, 255);
 					}
 					m->draw(xp * BLOCKSIZE - (xShift),yp * BLOCKSIZE - (yShift),0);
-
+			//		ofDrawBitmapString(ofToString(m->currentAnimation.collisionMask), ofPoint(xp*BLOCKSIZE - xShift, yp * BLOCKSIZE - (yShift)));
 				} else {
 				}
 			} 
@@ -76,14 +76,16 @@ void GameMap::drawMap(Camera* cam){
 bool GameMap::checkCollision(GameObject* subject){
 	
 	//check for bb intersections with nearest blocks
-	ofPoint subjectPos = ofPoint(subject->worldPos.x + subject->getBoundingBox().x, subject->worldPos.y + subject->getBoundingBox().y);
-	ofPoint subjectBB = ofPoint(subject->getBoundingBox().width, subject->getBoundingBox().height);
+	ofRectangle boundingBox = subject->getBoundingBox();
+	boundingBox.x += subject->worldPos.x;
+	boundingBox.y += subject->worldPos.y;
+	
 	
 	//find all tiles in the BB area
-	int xMin = floor((subjectPos.x ) / BLOCKSIZE);
-	int yMin = floor((subjectPos.y ) / BLOCKSIZE);
-	int xMax = ceil((subjectPos.x + subjectBB.x ) / BLOCKSIZE);
-	int yMax = ceil((subjectPos.y + subjectBB.y ) / BLOCKSIZE);	
+	int xMin = floor((boundingBox.x ) / BLOCKSIZE);
+	int yMin = floor((boundingBox.y ) / BLOCKSIZE);
+	int xMax = ceil((boundingBox.x + boundingBox.width ) / BLOCKSIZE);
+	int yMax = ceil((boundingBox.y + boundingBox.height ) / BLOCKSIZE);	
 	
 	bool didWeCollide = false;
 	int collisions = COL_NONE;
@@ -96,54 +98,46 @@ bool GameMap::checkCollision(GameObject* subject){
 			if( x < mapWidth && x > 0 && y < mapHeight && y  > 0){
 				//these are tiles we are likely to collide with
 				GameSprite* b = &mapData[x + y * mapWidth];
+				int collisionMask = b->currentAnimation.collisionMask;
 				if(b->empty == false ){
 					collisions = COL_NONE;
 					b->collided = true;
-					//b->setCurrentFrame(0);
-					//do a smooth pixel collision test.
-					//return the hit position
-					//if were falling then stop us
 					
-					
-					//cout << ": player base pos: " << subject->worldPos.y + subjectBB.y  << " -- block pos " << y * BLOCKSIZE<< endl;
-					
-					//check bottom edge is inside the collided tile
-					if((subjectPos.y + subjectBB.y) > (y * BLOCKSIZE ) && (subjectPos.y + subjectBB.y) <  (y * BLOCKSIZE ) + BLOCKSIZE){
-						if( subject->isOnGround == false){
-							//hit the ground
-							
-							onGround = true;
+					if(collisionMask & 1){ //top
+						//check our bottom-most point is inside the block
+						if(boundingBox.y + boundingBox.height >= y * BLOCKSIZE && subject->isOnGround == false){
+							//move us up to the boundary
 							subject->speed.y = 0;
-							subject->worldPos.y = ((y * BLOCKSIZE ) - subjectBB.y ) - subject->getBoundingBox().y  ;
-							//cout << "set: " << subject->worldPos.y << endl;
-							
-							subject->isJumping = false;
-							didWeCollide = true;
-							collisions |= COL_BOTTOM;
-							
-						}  else {
-							cout << "lol ";
-							subject->speed.y = 0;
-							subject->worldPos.y = ((y * BLOCKSIZE ) - subjectBB.y ) - subject->getBoundingBox().y;
+							subject->worldPos.y = (y * BLOCKSIZE ) - subject->getBoundingBox().y - subject->getBoundingBox().height;
 							didWeCollide = true;
 							onGround = true;
-							collisions |= COL_BOTTOM;
 						}
+						
+					} else if(collisionMask & 2) {		//right
+						if(boundingBox.x  <= x * BLOCKSIZE + BLOCKSIZE ){
+							//move us up to the boundary
+							subject->speed.x = 0;
+							subject->worldPos.x = (x * BLOCKSIZE + BLOCKSIZE ) - subject->getBoundingBox().x ;
+							didWeCollide = true;
+
+						}
+						
+						
+					} else if(collisionMask & 4) {		//bottom
+						if(boundingBox.y < y * BLOCKSIZE && subject->isOnGround == false){
+							subject->speed.y = 0;
+							subject->worldPos.y = ((y * BLOCKSIZE )  + BLOCKSIZE) -subject->getBoundingBox().y  ;
+							collisions |= COL_TOP;						
+						}
+					} else if(collisionMask & 8) {		//left
+						if(boundingBox.x + boundingBox.width >= x * BLOCKSIZE ){
+							//move us up to the boundary
+							subject->speed.x = 0;
+							subject->worldPos.x = (x * BLOCKSIZE ) - subject->getBoundingBox().x - subject->getBoundingBox().width;
+							didWeCollide = true;
 							
-					} else if((subjectPos.y ) >= (y * BLOCKSIZE ) && (subjectPos.y) <=  (y * BLOCKSIZE ) + BLOCKSIZE ){
-						subject->speed.y = 0;
-						subject->worldPos.y = ((y * BLOCKSIZE )  + BLOCKSIZE)  ;
-						collisions |= COL_TOP;
-					} else if((subjectPos.x + subjectBB.x) >= (x * BLOCKSIZE ) && (subjectPos.x + subjectBB.x) <=  (x * BLOCKSIZE ) + BLOCKSIZE &&  collisions == COL_NONE){
-						subject->speed.x = 0;
-						subject->worldPos.x = ((x * BLOCKSIZE ) - subjectBB.x ) ;
-						collisions |= COL_LEFT;
-					}else if((subjectPos.x ) >= (x * BLOCKSIZE ) && (subjectPos.x) <=  (x * BLOCKSIZE ) + BLOCKSIZE && collisions == COL_NONE){
-						subject->speed.x = 0;
-						subject->worldPos.x = ((x * BLOCKSIZE ) + BLOCKSIZE )  ;
-						collisions |= COL_RIGHT;
-					}			
-										
+						}
+					}
 				}
 				
 			}
