@@ -22,7 +22,7 @@ public:
 	ofRectangle getBoundingBox();
 	
 	ofPoint worldPos;			//top left of sprite for now
-	ofPoint boundingBoxSize;	//worldPos + bb size defines BB
+	//ofPoint boundingBoxSize;	//worldPos + bb size defines BB
 	ofPoint speed;
 	bool isMoving, isJumping, isOnGround;
 	

@@ -40,6 +40,10 @@ class testApp : public ofBaseApp{
 	
 	
 	bool ready;
+	
+	
+	ofImage watermark;
+	ofImage backgroundImage;
 };
 
 #endif

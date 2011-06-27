@@ -15,6 +15,7 @@ GameObject::GameObject(ofPoint worldPosition, GameSprite* spt){
 	sprite = spt;
 	speed = ofPoint(0,0);
 	isOnGround = false;
+//	boundingBox = ofRectangle(0,0,sprite->boundingBox.x, sprite->boundingBox.y);
 }
 
 GameObject::~GameObject(){
@@ -22,7 +23,7 @@ GameObject::~GameObject(){
 }
 
 ofRectangle GameObject::getBoundingBox(){
-	return ofRectangle(worldPos.x, worldPos.y, boundingBoxSize.x, boundingBoxSize.y);
+	return ofRectangle(worldPos.x + sprite->boundingBox.x , worldPos.y + sprite->boundingBox.y, sprite->boundingBox.width, sprite->boundingBox.height);
 }
 
 Player::Player(ofPoint worldPosition, GameSprite* spt) : GameObject(worldPosition, spt){
@@ -32,6 +33,7 @@ Player::Player(ofPoint worldPosition, GameSprite* spt) : GameObject(worldPositio
 Player::~Player(){
 	
 }
+
 
 void Player::think(){
 	if(isOnGround){

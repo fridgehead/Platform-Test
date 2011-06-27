@@ -62,7 +62,7 @@ void GameMap::drawMap(Camera* cam){
 					} else {
 						//ofSetColor(255, 255, 255);
 					}
-					m->draw(xp * BLOCKSIZE - (xShift),yp * BLOCKSIZE - (yShift),1);
+					m->draw(xp * BLOCKSIZE - (xShift),yp * BLOCKSIZE - (yShift),0);
 
 				} else {
 				}
@@ -77,7 +77,7 @@ bool GameMap::checkCollision(GameObject* subject){
 	
 	//check for bb intersections with nearest blocks
 	ofPoint subjectPos = subject->worldPos;
-	ofPoint subjectBB = subject->boundingBoxSize;
+	ofPoint subjectBB = ofPoint(subject->getBoundingBox().width, subject->getBoundingBox().height);
 	
 	//find all tiles in the BB area
 	int xMin = floor((subjectPos.x ) / BLOCKSIZE);
@@ -231,6 +231,7 @@ void GameMap::loadFromFile(string file){
 					 imgName.replace(pos, 4, "");
 										
 					 gs->loadData(imgName);
+					gs->scale = 1.0f;
 					 gs->collided = false;
 					gs->empty = false;
 					gs->setAnimation(anim);
@@ -242,6 +243,7 @@ void GameMap::loadFromFile(string file){
 					 delete gs;
 				} else {
 					GameSprite* gs = new GameSprite(spriteManager);
+					gs->scale = 1.0f;
 					gs->empty=true;
 					gs->collided = false;
 					mapData.push_back(*gs);

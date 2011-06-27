@@ -49,6 +49,8 @@ public:
 	void setCurrentFrame(int frame); //uses current anim;
 	Animation currentAnimation;
 	int currentFrame, lastFrame;
+	float scale;
+	ofRectangle boundingBox;
 
 private:
 	

@@ -28,11 +28,23 @@ void testApp::setup(){
 	
 	testPlayer = new Player(gameMap->spawnPos, testSprite);
 	testPlayer->speed = ofPoint(0,0);
-	testPlayer->boundingBoxSize = ofPoint(66,108);
+	//testSprite->boundingBoxSize = ofPoint(66,108);
 	ready = true;
 	
-		
-	
+	watermark.loadImage("watermark.png");
+	backgroundImage.allocate(64,64,OF_IMAGE_COLOR);
+	unsigned char * temp = new unsigned char[64*64*3];
+	for(int x = 0; x < 64; x++){
+		for(int y = 0; y < 64; y++){		
+			int basePos = (x + y * 64) * 3 ;
+			temp[basePos] = 0;
+			temp[basePos + 1] = 0;
+			temp[basePos + 2] = y * 4;
+			
+		}
+	}
+	backgroundImage.setFromPixels(temp, 64, 64, OF_IMAGE_COLOR, true);
+	delete[] temp;
 }
 
 //--------------------------------------------------------------
@@ -74,6 +86,7 @@ void testApp::draw(){
 
 	ofBackground(53,171,254);
 	//draw bg
+	backgroundImage.draw(0,0,1024,768);
 	
 	gameMap->drawMap(camera);
 	//screen space drawing
@@ -84,12 +97,12 @@ void testApp::draw(){
 	//world space drawing
 	spriteScreenPos = camera->worldToScreen(ofPoint(testPlayer->worldPos.x, testPlayer->worldPos.y));
 	if(spriteScreenPos.x != -1 && spriteScreenPos.y != -1){
-		testSprite->draw(spriteScreenPos.x, spriteScreenPos.y,2);
+		testSprite->draw(spriteScreenPos.x, spriteScreenPos.y,0);
 		ofNoFill();
-		ofRect(spriteScreenPos.x, spriteScreenPos.y, testPlayer->boundingBoxSize.x, testPlayer->boundingBoxSize.y);
+		ofRect(testPlayer->getBoundingBox().x ,  testPlayer->getBoundingBox().y , testPlayer->getBoundingBox().width, testPlayer->getBoundingBox().height);
 	}
 
-
+	watermark.draw(700, 700);
 
 }
 

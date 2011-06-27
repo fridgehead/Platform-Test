@@ -19,6 +19,8 @@ GameSprite::GameSprite(SpriteManager* spriteman){
 	mirror = false;
 	empty = false;
 	lastFrame = -1;
+	boundingBox = ofRectangle(0,0,1,1);
+	scale = 2.0f;
 	
 }
 
@@ -32,6 +34,8 @@ void GameSprite::loadData(string tag){
 	currentImageData = &(spriteMan->spriteData[spriteDataIndex]);
 	//cout << "!!!!tag: " << currentImageData->tag << endl;
 	currentImage.allocate(currentImageData->dimensions.x, currentImageData->dimensions.y, OF_IMAGE_COLOR_ALPHA);
+	
+	
 	//currentImage.setAnchorPoint(currentImageData->dimensions.x / 2 , currentImageData->dimensions.y /2 );
 	//setAnimation(ANIM_WALK);
 	
@@ -76,12 +80,12 @@ void GameSprite::setAnimation(int anim){
 	
 }
 
-void GameSprite::draw(int x, int y, int scale){
+void GameSprite::draw(int x, int y, int scaleExtra){
 	//ofRect(pos.x, pos.y, 10,10);
 	currentImageData = &(spriteMan->spriteData[spriteDataIndex]);
 
 	
-	currentImage.draw(x,y, currentImageData->dimensions.x * scale  , currentImageData->dimensions.y * scale);
+	currentImage.draw(x,y, currentImageData->dimensions.x * (scale + scaleExtra)  , currentImageData->dimensions.y * (scale + scaleExtra));
 //	currentImageData->image.draw(x,y, 32  , 32);
 }
 
@@ -98,11 +102,19 @@ void GameSprite::setCurrentFrame(int frame){
 		int srcX = frame * width;
 		int srcY = currentAnimation.spriteRow * height;
 		int ct = 0;
+		
+		//temps for working out the frames bounding box
+		int firstY = -1;
+		int firstX = -1;
+		int lastY = -1;
+		int lastX = -1;
+		
 		for(int x = 0; x < width; x++){
 			for(int y = 0; y < height; y++){
 				int subPos = 0;
 				if(mirror){
 					subPos = ((width - x) + y * width) * 4;
+
 				} else {
 					subPos = (x + y * width) * 4;
 				}
@@ -110,12 +122,27 @@ void GameSprite::setCurrentFrame(int frame){
 				newPix[subPos] = pix[mainPos];
 				newPix[subPos + 1] = pix[mainPos + 1];
 				newPix[subPos + 2] = pix[mainPos + 2];
-				newPix[subPos + 3] = pix[mainPos + 3];			
+				newPix[subPos + 3] = pix[mainPos + 3];		
+				if(pix[mainPos + 3] > 0){
+					if(firstX < x){
+						firstX = x;
+					}
+					if(firstY < y){
+						firstY = y;
+					}
+					
+					if(lastX >x){
+						lastX = x;
+					} 
+					if(lastY > y){
+						lastY = y;
+					}
+				}
 			}
 		}
 		currentImage.setFromPixels(newPix, width,height, OF_IMAGE_COLOR_ALPHA, true);
 		lastFrame = currentFrame;
-		
+		boundingBox = ofRectangle(firstX * scale,firstY * scale, abs(lastX - firstX) * scale, abs(lastY - firstY) * scale);
 		
 		delete[] newPix;
 	}
