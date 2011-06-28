@@ -28,13 +28,13 @@ GameMap::GameMap(SpriteManager* spriteMan, int width, int height){
 	mapHeight = height;
 	
 	BLOCKSIZE = 32.0f;
-		
+	
 	
 }
 
 GameMap::~GameMap(){
-
-
+	
+	
 }
 
 void GameMap::drawMap(Camera* cam){
@@ -58,12 +58,12 @@ void GameMap::drawMap(Camera* cam){
 					m->think();
 					//m->pos = ofPoint(xp * 32, yp * 32);
 					if(m->collided){
-			//			ofSetColor(255, 0, 0);
+						//			ofSetColor(255, 0, 0);
 					} else {
-			//			ofSetColor(255, 255, 255);
+						//			ofSetColor(255, 255, 255);
 					}
 					m->draw(xp * BLOCKSIZE - (xShift),yp * BLOCKSIZE - (yShift),0);
-			//		ofDrawBitmapString(ofToString(m->currentAnimation.collisionMask), ofPoint(xp*BLOCKSIZE - xShift, yp * BLOCKSIZE - (yShift)));
+					ofDrawBitmapString(ofToString(m->currentAnimation.collisionMask), ofPoint(xp*BLOCKSIZE - xShift, yp * BLOCKSIZE - (yShift)));
 				} else {
 				}
 			} 
@@ -103,34 +103,42 @@ bool GameMap::checkCollision(GameObject* subject){
 					collisions = COL_NONE;
 					b->collided = true;
 					
-					if(collisionMask & 1){ //top
-						//check our bottom-most point is inside the block
-						if(boundingBox.y + boundingBox.height >= y * BLOCKSIZE && subject->isOnGround == false){
+					if(boundingBox.y + boundingBox.height > y * BLOCKSIZE && boundingBox.y + boundingBox.height < y * BLOCKSIZE + BLOCKSIZE && subject->isOnGround == false){
+						if((collisionMask & 1) > 0){ //top
+							//check our bottom-most point is inside the block
+							
 							//move us up to the boundary
 							subject->speed.y = 0;
 							subject->worldPos.y = (y * BLOCKSIZE ) - subject->getBoundingBox().y - subject->getBoundingBox().height;
 							didWeCollide = true;
 							onGround = true;
 						}
-						
-					} else if(collisionMask & 2) {		//right
-						if(boundingBox.x  <= x * BLOCKSIZE + BLOCKSIZE ){
+					}
+					if(boundingBox.x  < x * BLOCKSIZE + BLOCKSIZE  && boundingBox.x  > x * BLOCKSIZE){
+						if((collisionMask & 2 )> 0) {		//right
+							
 							//move us up to the boundary
 							subject->speed.x = 0;
 							subject->worldPos.x = (x * BLOCKSIZE + BLOCKSIZE ) - subject->getBoundingBox().x ;
 							didWeCollide = true;
-
+							cout << "wtf: " << (collisionMask & 2)<< endl;
+							
 						}
-						
-						
-					} else if(collisionMask & 4) {		//bottom
-						if(boundingBox.y < y * BLOCKSIZE && subject->isOnGround == false){
+					}  
+					if(boundingBox.y < y * BLOCKSIZE + BLOCKSIZE && boundingBox.y > y * BLOCKSIZE && subject->isOnGround == false){
+						if((collisionMask & 4) > 0) {		//bottom
+							
 							subject->speed.y = 0;
 							subject->worldPos.y = ((y * BLOCKSIZE )  + BLOCKSIZE) -subject->getBoundingBox().y  ;
 							collisions |= COL_TOP;						
-						}
-					} else if(collisionMask & 8) {		//left
-						if(boundingBox.x + boundingBox.width >= x * BLOCKSIZE ){
+							
+						} 		
+						
+					}  
+					if(boundingBox.x + boundingBox.width > x * BLOCKSIZE && boundingBox.x + boundingBox.width < x * BLOCKSIZE + BLOCKSIZE ){
+						
+						if((collisionMask & 8 )> 0) {		//left
+							
 							//move us up to the boundary
 							subject->speed.x = 0;
 							subject->worldPos.x = (x * BLOCKSIZE ) - subject->getBoundingBox().x - subject->getBoundingBox().width;
@@ -174,30 +182,30 @@ void GameMap::loadFromFile(string file){
 		// Print tileset information.
 		printf("Name: %s\n", tileset->GetName().c_str());
 		// Get a tile from the tileset.
-			
-	
-			
-	
+		
+		
+		
+		
 	}
 	
 	// Iterate through ttmxMap->he layers.
 	for (int i = 0; i < tmxMap->GetNumLayers(); ++i) {
 		mapWidth =  tmxMap->GetLayer(i)->GetWidth() ;
 		mapHeight =  tmxMap->GetLayer(i)->GetHeight() ;
-
+		
 		printf("                                    \n");
 		printf("====================================\n");
 		printf("Layer : %02d/%s \n", i, tmxMap->GetLayer(i)->GetName().c_str());
 		printf("width : %02d \n", mapWidth);
 		printf("height : %02d \n", mapHeight);
 		printf("====================================\n");
-       		
+		
 		// Get a layer.
 		const Tmx::Layer *layer = tmxMap->GetLayer(i);
 		
 		for (int y = 0; y < mapHeight; ++y) {
 			for (int x = 0; x < mapWidth; ++x) {
-
+				
 				// Get a tile global id.
 				//printf("%03d ", layer->GetTileGid(y, x));
 				// Find a tileset for that id.
@@ -214,23 +222,23 @@ void GameMap::loadFromFile(string file){
 					}
 					//cout << anim;
 					
-					 GameSprite* gs = new GameSprite(spriteManager);
-					 //get the xml block file name from the image source name
-					 string imgName = tileset->GetImage()->GetSource();
-					 int pos = imgName.find(".");
-					 imgName.replace(pos, 4, "");
-										
-					 gs->loadData(imgName);
+					GameSprite* gs = new GameSprite(spriteManager);
+					//get the xml block file name from the image source name
+					string imgName = tileset->GetImage()->GetSource();
+					int pos = imgName.find(".");
+					imgName.replace(pos, 4, "");
+					
+					gs->loadData(imgName);
 					gs->scale = 1.0f;
-					 gs->collided = false;
+					gs->collided = false;
 					gs->empty = false;
 					gs->setAnimation(anim);
 					
 					gs->setCurrentFrame(0);
 					cout << anim;
 					
-					 mapData.push_back(*gs);
-					 delete gs;
+					mapData.push_back(*gs);
+					delete gs;
 				} else {
 					GameSprite* gs = new GameSprite(spriteManager);
 					gs->scale = 1.0f;
@@ -294,11 +302,11 @@ void GameMap::getMapArea(ofRectangle area, GameSprite* blocks){
 			if( area.x + x < mapWidth && area.x + x > 0 && area.y + y < mapWidth && area.y + y > 0){
 				blocks[x + y * w] = mapData[((int)area.x + x) + ((int)area.y + y) * mapWidth];
 			} 
-				
+			
 		}
 	}
 	
-													 
-			
+	
+	
 }
 

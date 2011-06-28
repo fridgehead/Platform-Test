@@ -39,10 +39,10 @@ void Player::think(){
 	if(isOnGround){
 	
 		speed.y = 0;
-		cout << "ground " << endl;
+		//cout << "ground " << endl;
 		isJumping = false;
 	} else {
-		cout << "not ground" << endl;
+		//cout << "not ground" << endl;
 		isJumping = true;
 		if(speed.y < 30){
 			speed.y += 2;
