@@ -43,7 +43,9 @@ void Player::think(){
 		isJumping = false;
 	} else {
 		//cout << "not ground" << endl;
+		
 		isJumping = true;
+		isOnGround = false;
 		if(speed.y < 30){
 			speed.y += 2;
 		}

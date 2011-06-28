@@ -101,6 +101,10 @@ void testApp::draw(){
 		ofNoFill();
 		//ofRect(spriteScreenPos.x + testPlayer->getBoundingBox().x, spriteScreenPos.y + testPlayer->getBoundingBox().y , testPlayer->getBoundingBox().width, testPlayer->getBoundingBox().height);
 	}
+	
+	ofDrawBitmapString(ofToString(testPlayer->isOnGround), ofPoint(100,100));
+	ofDrawBitmapString(ofToString(testPlayer->isJumping), ofPoint(100,120));
+	
 
 	watermark.draw(700, 700);
 

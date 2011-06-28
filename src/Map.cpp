@@ -153,8 +153,9 @@ bool GameMap::checkCollision(GameObject* subject){
 			}
 		}
 	}
-
+	if(subject->isOnGround != onGround){
 		subject->isOnGround = onGround;
+	}
 
 	
 	return didWeCollide;
