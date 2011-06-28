@@ -63,7 +63,7 @@ void GameMap::drawMap(Camera* cam){
 						//			ofSetColor(255, 255, 255);
 					}
 					m->draw(xp * BLOCKSIZE - (xShift),yp * BLOCKSIZE - (yShift),0);
-					ofDrawBitmapString(ofToString(m->currentAnimation.collisionMask), ofPoint(xp*BLOCKSIZE - xShift, yp * BLOCKSIZE - (yShift)));
+					//ofDrawBitmapString(ofToString(m->currentAnimation.collisionMask), ofPoint(xp*BLOCKSIZE - xShift, yp * BLOCKSIZE - (yShift)));
 				} else {
 				}
 			} 
@@ -112,37 +112,39 @@ bool GameMap::checkCollision(GameObject* subject){
 							subject->worldPos.y = (y * BLOCKSIZE ) - subject->getBoundingBox().y - subject->getBoundingBox().height;
 							didWeCollide = true;
 							onGround = true;
+							collisions |= COL_TOP;
 						}
 					}
 					if(boundingBox.x  < x * BLOCKSIZE + BLOCKSIZE  && boundingBox.x  > x * BLOCKSIZE){
-						if((collisionMask & 2 )> 0) {		//right
+						if((collisionMask & 2 && collisions == 0)> 0) {		//right
 							
 							//move us up to the boundary
 							subject->speed.x = 0;
 							subject->worldPos.x = (x * BLOCKSIZE + BLOCKSIZE ) - subject->getBoundingBox().x ;
 							didWeCollide = true;
-							cout << "wtf: " << (collisionMask & 2)<< endl;
+							collisions |= COL_RIGHT;							
 							
 						}
 					}  
 					if(boundingBox.y < y * BLOCKSIZE + BLOCKSIZE && boundingBox.y > y * BLOCKSIZE && subject->isOnGround == false){
-						if((collisionMask & 4) > 0) {		//bottom
+						if((collisionMask & 4) > 0 && collisions == 0) {		//bottom
 							
 							subject->speed.y = 0;
 							subject->worldPos.y = ((y * BLOCKSIZE )  + BLOCKSIZE) -subject->getBoundingBox().y  ;
-							collisions |= COL_TOP;						
-							
+							collisions |= COL_BOTTOM;						
+							didWeCollide = true;							
 						} 		
 						
 					}  
 					if(boundingBox.x + boundingBox.width > x * BLOCKSIZE && boundingBox.x + boundingBox.width < x * BLOCKSIZE + BLOCKSIZE ){
 						
-						if((collisionMask & 8 )> 0) {		//left
+						if((collisionMask & 8 )> 0 && collisions == 0) {		//left
 							
 							//move us up to the boundary
 							subject->speed.x = 0;
 							subject->worldPos.x = (x * BLOCKSIZE ) - subject->getBoundingBox().x - subject->getBoundingBox().width;
 							didWeCollide = true;
+							collisions |= COL_LEFT;
 							
 						}
 					}
@@ -151,7 +153,9 @@ bool GameMap::checkCollision(GameObject* subject){
 			}
 		}
 	}
-	subject->isOnGround = onGround;
+
+		subject->isOnGround = onGround;
+
 	
 	return didWeCollide;
 	

@@ -202,46 +202,6 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>34BB177713BA051400A03974</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>Map.cpp</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>34BB177813BA051400A03974</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>Map.cpp</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>34BB17E413BA08D800A03974</string>
-						<key>history</key>
-						<array>
-							<string>34BB177313BA049C00A03974</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {1135, 754}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>281 83 1135 795 0 0 1440 878 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
 				<string>34FC252B13B924040004922C</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>testApp.h</string>
@@ -256,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>34BB17E513BA08D800A03974</string>
+						<string>34BB180013BA10E500A03974</string>
 						<key>history</key>
 						<array>
 							<string>34FC26B213B93EC90004922C</string>
@@ -411,7 +371,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>34BB17E313BA08D800A03974</string>
+										<string>34BB17FF13BA10E500A03974</string>
 										<key>history</key>
 										<array>
 											<string>34BD751D13B229D500596DCB</string>
@@ -647,7 +607,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>34BB17E613BA08D800A03974</string>
 		<string>34BB173D13BA012900A03974</string>
 		<string>34BB173E13BA012900A03974</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -655,7 +614,6 @@
 		<string>34FC252B13B924040004922C</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/tomwyatt/dev/cpp/apps/Platform/Platform.xcodeproj</string>
-		<string>34BB177713BA051400A03974</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 269 1041 609 0 0 1440 878 </string>

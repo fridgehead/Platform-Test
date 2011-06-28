@@ -341,9 +341,9 @@
 	};
 	348FA8B613B360A2005381D3 /* Map.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1223, 3900}}";
-			sepNavSelRange = "{4056, 0}";
-			sepNavVisRange = "{2182, 2117}";
+			sepNavIntBoundsRect = "{{0, 0}, {992, 4212}}";
+			sepNavSelRange = "{6891, 0}";
+			sepNavVisRange = "{4451, 320}";
 			sepNavWindowFrame = "{{281, 27}, {1135, 851}}";
 		};
 	};
@@ -582,7 +582,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 227";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 4610;
@@ -592,7 +592,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 108";
 		rLen = 0;
-		rLoc = 2882;
+		rLoc = 2884;
 		rType = 0;
 		vrLen = 1743;
 		vrLoc = 2419;
@@ -612,7 +612,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 227";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 4570;
@@ -622,7 +622,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 127";
 		rLen = 0;
-		rLoc = 3884;
+		rLoc = 3968;
 		rType = 0;
 		vrLen = 1757;
 		vrLoc = 2419;
@@ -642,7 +642,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 227";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 497;
 		vrLoc = 4570;
@@ -652,7 +652,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 127";
 		rLen = 0;
-		rLoc = 3884;
+		rLoc = 3968;
 		rType = 0;
 		vrLen = 1795;
 		vrLoc = 2526;
@@ -672,7 +672,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 228";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 4602;
@@ -682,7 +682,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 131";
 		rLen = 0;
-		rLoc = 3884;
+		rLoc = 3968;
 		rType = 0;
 		vrLen = 1708;
 		vrLoc = 2526;
@@ -702,7 +702,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 228";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 4623;
@@ -712,7 +712,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 127";
 		rLen = 0;
-		rLoc = 3884;
+		rLoc = 3968;
 		rType = 0;
 		vrLen = 1710;
 		vrLoc = 2467;
@@ -732,7 +732,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 228";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 4603;
@@ -742,7 +742,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 127";
 		rLen = 0;
-		rLoc = 3884;
+		rLoc = 3968;
 		rType = 0;
 		vrLen = 1788;
 		vrLoc = 2419;
@@ -762,7 +762,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 230";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 457;
 		vrLoc = 4595;
@@ -772,7 +772,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 133";
 		rLen = 0;
-		rLoc = 3884;
+		rLoc = 3968;
 		rType = 0;
 		vrLen = 1727;
 		vrLoc = 2526;
@@ -796,7 +796,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 230";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 457;
 		vrLoc = 4593;
@@ -806,7 +806,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 133";
 		rLen = 0;
-		rLoc = 3884;
+		rLoc = 3968;
 		rType = 0;
 		vrLen = 1729;
 		vrLoc = 2526;
@@ -850,7 +850,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 230";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 488;
 		vrLoc = 4589;
@@ -860,7 +860,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 105";
 		rLen = 0;
-		rLoc = 2783;
+		rLoc = 2785;
 		rType = 0;
 		vrLen = 1997;
 		vrLoc = 2173;
@@ -880,7 +880,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 230";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 488;
 		vrLoc = 4595;
@@ -890,7 +890,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 105";
 		rLen = 0;
-		rLoc = 2783;
+		rLoc = 2785;
 		rType = 0;
 		vrLen = 2003;
 		vrLoc = 2173;
@@ -910,7 +910,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 230";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 457;
 		vrLoc = 4609;
@@ -920,7 +920,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 106";
 		rLen = 0;
-		rLoc = 2809;
+		rLoc = 2811;
 		rType = 0;
 		vrLen = 1964;
 		vrLoc = 2199;
@@ -940,7 +940,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 230";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 457;
 		vrLoc = 4608;
@@ -950,7 +950,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 108";
 		rLen = 0;
-		rLoc = 2882;
+		rLoc = 2884;
 		rType = 0;
 		vrLen = 1963;
 		vrLoc = 2199;
@@ -970,7 +970,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 230";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 457;
 		vrLoc = 4594;
@@ -980,7 +980,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 135";
 		rLen = 0;
-		rLoc = 4033;
+		rLoc = 4117;
 		rType = 0;
 		vrLen = 1949;
 		vrLoc = 2199;
@@ -1000,7 +1000,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 231";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 4720;
@@ -1010,7 +1010,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 115";
 		rLen = 0;
-		rLoc = 2783;
+		rLoc = 2785;
 		rType = 0;
 		vrLen = 1966;
 		vrLoc = 2199;
@@ -1030,7 +1030,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 231";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 4701;
@@ -1040,7 +1040,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 107";
 		rLen = 0;
-		rLoc = 2776;
+		rLoc = 2778;
 		rType = 0;
 		vrLen = 1999;
 		vrLoc = 2199;
@@ -1060,7 +1060,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 231";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 4709;
@@ -1070,7 +1070,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 116";
 		rLen = 0;
-		rLoc = 3119;
+		rLoc = 3151;
 		rType = 0;
 		vrLen = 2007;
 		vrLoc = 2199;
@@ -1090,7 +1090,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 231";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 4707;
@@ -1100,7 +1100,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 109";
 		rLen = 0;
-		rLoc = 2882;
+		rLoc = 2884;
 		rType = 0;
 		vrLen = 2005;
 		vrLoc = 2199;
@@ -1120,7 +1120,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 230";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 4753;
@@ -1130,7 +1130,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 124";
 		rLen = 0;
-		rLoc = 3528;
+		rLoc = 3563;
 		rType = 0;
 		vrLen = 2023;
 		vrLoc = 2175;
@@ -1150,7 +1150,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 229";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 493;
 		vrLoc = 4743;
@@ -1170,7 +1170,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 133";
 		rLen = 0;
-		rLoc = 3883;
+		rLoc = 3967;
 		rType = 0;
 		vrLen = 1930;
 		vrLoc = 2365;
@@ -1180,7 +1180,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 229";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 408;
 		vrLoc = 4815;
@@ -1190,7 +1190,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 134";
 		rLen = 0;
-		rLoc = 3892;
+		rLoc = 3976;
 		rType = 0;
 		vrLen = 1874;
 		vrLoc = 2365;
@@ -1210,7 +1210,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 236";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 4843;
@@ -1220,7 +1220,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 117";
 		rLen = 0;
-		rLoc = 3152;
+		rLoc = 3184;
 		rType = 0;
 		vrLen = 1943;
 		vrLoc = 2273;
@@ -1240,7 +1240,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 235";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 406;
 		vrLoc = 4892;
@@ -1250,7 +1250,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 124";
 		rLen = 0;
-		rLoc = 3504;
+		rLoc = 3539;
 		rType = 0;
 		vrLen = 1910;
 		vrLoc = 2273;
@@ -1270,7 +1270,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 235";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 4901;
@@ -1280,7 +1280,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 138";
 		rLen = 0;
-		rLoc = 4016;
+		rLoc = 4100;
 		rType = 0;
 		vrLen = 1544;
 		vrLoc = 3058;
@@ -1300,7 +1300,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 235";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 4919;
@@ -1310,7 +1310,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 124";
 		rLen = 0;
-		rLoc = 3491;
+		rLoc = 3539;
 		rType = 0;
 		vrLen = 2030;
 		vrLoc = 2273;
@@ -1330,7 +1330,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 235";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 4925;
@@ -1340,7 +1340,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 124";
 		rLen = 0;
-		rLoc = 3496;
+		rLoc = 3539;
 		rType = 0;
 		vrLen = 2066;
 		vrLoc = 2238;
@@ -1360,7 +1360,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 235";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 4927;
@@ -1370,7 +1370,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 118";
 		rLen = 0;
-		rLoc = 3244;
+		rLoc = 3294;
 		rType = 0;
 		vrLen = 2111;
 		vrLoc = 2182;
@@ -1390,7 +1390,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 235";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 4933;
@@ -1400,7 +1400,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 140";
 		rLen = 0;
-		rLoc = 4056;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 2117;
 		vrLoc = 2182;
@@ -1413,6 +1413,156 @@
 		rLoc = 184;
 		rType = 0;
 		vrLen = 550;
+		vrLoc = 0;
+	};
+	34BB17E713BA0A3C00A03974 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
+		name = "Map.cpp: 235";
+		rLen = 0;
+		rLoc = 6891;
+		rType = 0;
+		vrLen = 461;
+		vrLoc = 4972;
+	};
+	34BB17E813BA0A3C00A03974 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
+		name = "Map.cpp: 140";
+		rLen = 0;
+		rLoc = 4121;
+		rType = 0;
+		vrLen = 2128;
+		vrLoc = 2182;
+	};
+	34BB17E913BA0A3C00A03974 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
+		name = "Map.cpp: 124";
+		rLen = 0;
+		rLoc = 3539;
+		rType = 0;
+		vrLen = 1969;
+		vrLoc = 2314;
+	};
+	34BB17EA13BA0A3C00A03974 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1F0A3A1BDC003C02F2 /* testApp.h */;
+		name = "testApp.h: 14";
+		rLen = 0;
+		rLoc = 184;
+		rType = 0;
+		vrLen = 571;
+		vrLoc = 0;
+	};
+	34BB17ED13BA103A00A03974 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
+		name = "Map.cpp: 237";
+		rLen = 0;
+		rLoc = 6891;
+		rType = 0;
+		vrLen = 488;
+		vrLoc = 4744;
+	};
+	34BB17EE13BA103A00A03974 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
+		name = "Map.cpp: 156";
+		rLen = 0;
+		rLoc = 4498;
+		rType = 0;
+		vrLen = 1778;
+		vrLoc = 2618;
+	};
+	34BB17EF13BA103A00A03974 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1F0A3A1BDC003C02F2 /* testApp.h */;
+		name = "testApp.h: 14";
+		rLen = 0;
+		rLoc = 184;
+		rType = 0;
+		vrLen = 550;
+		vrLoc = 0;
+	};
+	34BB17F313BA105F00A03974 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
+		name = "Map.cpp: 237";
+		rLen = 0;
+		rLoc = 6891;
+		rType = 0;
+		vrLen = 488;
+		vrLoc = 4722;
+	};
+	34BB17F413BA105F00A03974 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
+		name = "Map.cpp: 156";
+		rLen = 0;
+		rLoc = 4498;
+		rType = 0;
+		vrLen = 1756;
+		vrLoc = 2618;
+	};
+	34BB17F513BA105F00A03974 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1F0A3A1BDC003C02F2 /* testApp.h */;
+		name = "testApp.h: 14";
+		rLen = 0;
+		rLoc = 184;
+		rType = 0;
+		vrLen = 550;
+		vrLoc = 0;
+	};
+	34BB17FB13BA10BE00A03974 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
+		name = "Map.cpp: 239";
+		rLen = 0;
+		rLoc = 6891;
+		rType = 0;
+		vrLen = 239;
+		vrLoc = 4449;
+	};
+	34BB17FC13BA10BE00A03974 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
+		name = "Map.cpp: 141";
+		rLen = 0;
+		rLoc = 4147;
+		rType = 0;
+		vrLen = 1989;
+		vrLoc = 2472;
+	};
+	34BB17FD13BA10BE00A03974 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1F0A3A1BDC003C02F2 /* testApp.h */;
+		name = "testApp.h: 14";
+		rLen = 0;
+		rLoc = 184;
+		rType = 0;
+		vrLen = 550;
+		vrLoc = 0;
+	};
+	34BB17FF13BA10E500A03974 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
+		name = "Map.cpp: 239";
+		rLen = 0;
+		rLoc = 6891;
+		rType = 0;
+		vrLen = 320;
+		vrLoc = 4451;
+	};
+	34BB180013BA10E500A03974 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1F0A3A1BDC003C02F2 /* testApp.h */;
+		name = "testApp.h: 14";
+		rLen = 0;
+		rLoc = 184;
+		rType = 0;
+		vrLen = 571;
 		vrLoc = 0;
 	};
 	34BD748313B226FB00596DCB /* Platform */ = {
@@ -1580,7 +1730,7 @@
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
-	34EA432513B52BFD007C4A36 /* Map.cpp:150 */ = {
+	34EA432513B52BFD007C4A36 /* Map.cpp:152 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1592,7 +1742,7 @@
 		functionName = "GameMap::checkCollision(GameObject* subject)";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 150;
+		lineNumber = 152;
 		modificationTime = 330786810.2396361;
 		originalNumberOfMultipleMatches = 0;
 		state = 2;
@@ -1632,7 +1782,7 @@
 		fRef = 348FA8B613B360A2005381D3 /* Map.cpp */;
 		name = "Map.cpp: 193";
 		rLen = 0;
-		rLoc = 6754;
+		rLoc = 6891;
 		rType = 0;
 		vrLen = 535;
 		vrLoc = 4633;
@@ -1716,7 +1866,7 @@
 			3416AFA313B39C0600588667 /* testApp.cpp:48 */,
 			34AC2FE413B3FEE300B92DC7 /* Map.h:38 */,
 			34EA40CF13B5155E007C4A36 /* Sprite.cpp:73 */,
-			34EA432513B52BFD007C4A36 /* Map.cpp:150 */,
+			34EA432513B52BFD007C4A36 /* Map.cpp:152 */,
 		);
 		codeSenseManager = 34BD74BF13B2272800596DCB /* Code sense */;
 		executables = (
@@ -1867,6 +2017,21 @@
 			34BB17E313BA08D800A03974 /* PBXTextBookmark */ = 34BB17E313BA08D800A03974 /* PBXTextBookmark */;
 			34BB17E413BA08D800A03974 /* PBXTextBookmark */ = 34BB17E413BA08D800A03974 /* PBXTextBookmark */;
 			34BB17E513BA08D800A03974 /* PBXTextBookmark */ = 34BB17E513BA08D800A03974 /* PBXTextBookmark */;
+			34BB17E713BA0A3C00A03974 /* PBXTextBookmark */ = 34BB17E713BA0A3C00A03974 /* PBXTextBookmark */;
+			34BB17E813BA0A3C00A03974 /* PBXTextBookmark */ = 34BB17E813BA0A3C00A03974 /* PBXTextBookmark */;
+			34BB17E913BA0A3C00A03974 /* PBXTextBookmark */ = 34BB17E913BA0A3C00A03974 /* PBXTextBookmark */;
+			34BB17EA13BA0A3C00A03974 /* PBXTextBookmark */ = 34BB17EA13BA0A3C00A03974 /* PBXTextBookmark */;
+			34BB17ED13BA103A00A03974 /* PBXTextBookmark */ = 34BB17ED13BA103A00A03974 /* PBXTextBookmark */;
+			34BB17EE13BA103A00A03974 /* PBXTextBookmark */ = 34BB17EE13BA103A00A03974 /* PBXTextBookmark */;
+			34BB17EF13BA103A00A03974 /* PBXTextBookmark */ = 34BB17EF13BA103A00A03974 /* PBXTextBookmark */;
+			34BB17F313BA105F00A03974 /* PBXTextBookmark */ = 34BB17F313BA105F00A03974 /* PBXTextBookmark */;
+			34BB17F413BA105F00A03974 /* PBXTextBookmark */ = 34BB17F413BA105F00A03974 /* PBXTextBookmark */;
+			34BB17F513BA105F00A03974 /* PBXTextBookmark */ = 34BB17F513BA105F00A03974 /* PBXTextBookmark */;
+			34BB17FB13BA10BE00A03974 /* PBXTextBookmark */ = 34BB17FB13BA10BE00A03974 /* PBXTextBookmark */;
+			34BB17FC13BA10BE00A03974 /* PBXTextBookmark */ = 34BB17FC13BA10BE00A03974 /* PBXTextBookmark */;
+			34BB17FD13BA10BE00A03974 /* PBXTextBookmark */ = 34BB17FD13BA10BE00A03974 /* PBXTextBookmark */;
+			34BB17FF13BA10E500A03974 /* PBXTextBookmark */ = 34BB17FF13BA10E500A03974 /* PBXTextBookmark */;
+			34BB180013BA10E500A03974 /* PBXTextBookmark */ = 34BB180013BA10E500A03974 /* PBXTextBookmark */;
 			34BD751D13B229D500596DCB = 34BD751D13B229D500596DCB /* PBXTextBookmark */;
 			34BD759A13B2843800596DCB = 34BD759A13B2843800596DCB /* PBXTextBookmark */;
 			34BD759B13B2843800596DCB = 34BD759B13B2843800596DCB /* PBXTextBookmark */;
@@ -1906,7 +2071,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {744, 572}}";
 			sepNavSelRange = "{184, 0}";
-			sepNavVisRange = "{0, 550}";
+			sepNavVisRange = "{0, 571}";
 			sepNavWindowFrame = "{{404, 250}, {803, 504}}";
 		};
 	};
